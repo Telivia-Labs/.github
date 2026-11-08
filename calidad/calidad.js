@@ -8,9 +8,10 @@ import tseslint from 'typescript-eslint';
 import { join } from 'node:path';
 import { lineasNuevas, tocaNuevas } from './diff.js';
 
-const GENERADO = new RegExp('(^|/)(dist|build|vendor|node_modules|\\.next|__snapshots__|'
-  + 'generad[oa]s?)/|\\.min\\.(js|css)$', 'i');
-const esGenerado = (ruta) => GENERADO.test(ruta);
+const CARPETA_GENERADA =
+  /(?:^|\/)(?:dist|build|vendor|node_modules|\.next|__snapshots__|generad[oa]s?)\//i;
+const MINIFICADO = /\.min\.(?:js|css)$/i;
+const esGenerado = (ruta) => CARPETA_GENERADA.test(ruta) || MINIFICADO.test(ruta);
 
 const JS = /\.(m?js|cjs|jsx)$/;
 const TS = /\.(m?ts|cts|tsx)$/;
