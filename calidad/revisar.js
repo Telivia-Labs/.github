@@ -21,8 +21,9 @@ async function archivosDelPR() {
 }
 
 const { fallas, revisados } = await revisarCalidad(REPO_DIR, await archivosDelPR());
+const lista = fallas.map((f) => '- ' + f).join('\n');
 const resumen = fallas.length
-  ? `### Calidad: ${fallas.length} falla(s)\n\n${fallas.map((f) => `- ${f}`).join('\n')}\n`
+  ? `### Calidad: ${fallas.length} falla(s)\n\n${lista}\n`
   : `### Calidad: bien · ${revisados} archivo(s) JS/TS\n`;
 console.log(resumen);
 if (GITHUB_STEP_SUMMARY) appendFileSync(GITHUB_STEP_SUMMARY, resumen);
