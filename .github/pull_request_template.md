@@ -1,5 +1,7 @@
 <!-- Título: Conventional Commits en inglés, máximo 72 caracteres. Ej.: fix(cobros): cap payment at invoice balance -->
-<!-- Un propósito, máximo 400 líneas sin contar lo generado. El revisor de forma falla si falta una sección. -->
+<!-- Un propósito, máximo 400 líneas sin contar lo generado; si es más, PR consecutivos «N de M». -->
+<!-- Código nuevo o tocado: máximo 100 caracteres por línea, 300 líneas por archivo y 50 por función. -->
+<!-- El revisor de forma falla si falta una sección o si no se cumplen estos límites. -->
 
 ## Qué cambia
 <!-- Una o dos frases en español claro, para Juan. -->

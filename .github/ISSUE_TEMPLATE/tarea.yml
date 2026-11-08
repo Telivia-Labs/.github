@@ -8,6 +8,8 @@ body:
     attributes:
       value: |
         Un propósito por tarea. Si el título lleva «y», son dos tareas.
+        Límites: PR de máximo 400 líneas sin contar lo generado (si es más, PR consecutivos «N de M»);
+        código nuevo o tocado de máximo 100 caracteres por línea, 300 líneas por archivo y 50 por función.
         Lo que no se sabe se escribe «por confirmar»; no se inventa.
         Los agentes no llenan esto a mano: usan `scripts/nueva-tarea.js` del orquestador.
   - type: textarea
@@ -56,7 +58,7 @@ body:
     id: tamano
     attributes:
       label: Tamaño estimado
-      description: Líneas cambiadas, sin contar lo generado. Máximo 400.
+      description: Líneas cambiadas, sin contar lo generado. Máximo 400; si es más, son varias tareas.
       placeholder: "120"
     validations:
       required: true
