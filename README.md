@@ -15,3 +15,32 @@ registra y no puede crecer.
 
 Un repo que tenga su propia plantilla deja de usar la de aquí. Los agentes (Claude y Codex) no escriben
 tareas a mano: usan `scripts/nueva-tarea.js` del orquestador.
+
+## Revisor de forma
+`.github/workflows/forma.yml` falla el PR si el título no es Conventional Commits en inglés de máximo
+72 caracteres, si falta una sección de la plantilla, si pasa de 400 líneas sin contar lo generado o si
+no enlaza una tarea («Closes #12»). También si el código nuevo tiene líneas de más de 100 caracteres o un
+archivo nuevo de más de 300 líneas; las 50 líneas por función las revisa ESLint (paso «limites» de
+telivia-calidad). Falla la tarea si le falta un campo obligatorio, y avisa en ella.
+
+Cada repo lo llama con este archivo, `.github/workflows/revisar-forma.yml`:
+
+```yaml
+name: revisar-forma
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+  issues:
+    types: [opened, edited]
+permissions:
+  contents: read
+  pull-requests: read
+  issues: write
+jobs:
+  forma:
+    uses: Telivia-Labs/.github/.github/workflows/forma.yml@main
+    # with:
+    #   generados: "supabase/tipos/, *.generado.ts"   # lo que no cuenta como líneas
+```
+
+Pruebas: `node --test` (sin librerías, Node 22).

@@ -1,0 +1,53 @@
+# Revisor de forma reutilizable. Cada repo lo llama con un flujo corto (ver README):
+#   PR: título Conventional Commits en inglés (≤ 72), secciones de la plantilla, ≤ 400 líneas sin
+#   lo generado, tarea enlazada y código nuevo con líneas ≤ 100 y archivos nuevos ≤ 300.
+#   Tareas: campos obligatorios del formulario.
+name: forma
+on:
+  workflow_call:
+    inputs:
+      generados:
+        description: "Patrones extra que no cuentan como líneas, separados por coma (dir/, *.ext)"
+        type: string
+        default: ""
+      ref:
+        description: "Versión de revisar.js (rama, etiqueta o commit); no sigue al @ref de uses"
+        type: string
+        default: main
+permissions:
+  contents: read
+  pull-requests: read
+  issues: write
+jobs:
+  forma:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: Telivia-Labs/.github
+          ref: ${{ inputs.ref }}
+          path: .forma
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - id: revisar
+        run: node .forma/forma/revisar.js
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GENERADOS: ${{ inputs.generados }}
+      - name: Avisar en la tarea
+        if: >-
+          failure() && steps.revisar.outcome == 'failure' && steps.revisar.outputs.fallas != ''
+          && github.event_name == 'issues' && github.event.action == 'opened'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FALLAS: ${{ steps.revisar.outputs.fallas }}
+          NUMERO: ${{ github.event.issue.number }}
+        run: |
+          {
+            printf 'La tarea no tiene la forma de Telivia:\n\n%s\n\n' "$FALLAS"
+            printf 'Edítala y el revisor vuelve a mirar.\n'
+          } > aviso.md
+          gh issue comment "$NUMERO" --repo "$GITHUB_REPOSITORY" --body-file aviso.md
