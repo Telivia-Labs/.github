@@ -9,7 +9,8 @@ Plantillas que GitHub aplica a todos los repos de la organización sin copiarlas
   cómo se revierte, «N de M», el agente (Cerebro, que es Claude, o Dexter, que es Codex) y la tarea
   que cierra.
 
-Límites: PR de máximo 400 líneas cambiadas sin contar lo generado (si es más, PR consecutivos «N de M»,
+Límites: PR de máximo 400 líneas cambiadas sin contar lo generado ni los archivos borrados completos
+(decisión de Juan, 8 nov 2026; si es más, PR consecutivos «N de M»,
 sin excepciones). Código nuevo o tocado: máximo 100 caracteres por línea, 300 líneas por archivo y
 50 líneas por función, sin contar líneas en blanco ni comentarios. Lo heredado que ya se pasa se
 registra y no puede crecer.
