@@ -1,0 +1,14 @@
+{
+  "name": "telivia-calidad",
+  "private": true,
+  "type": "module",
+  "description": "Revisión «calidad» de Telivia Labs: reglas gratuitas de SonarSource y funciones de 50 líneas.",
+  "engines": { "node": ">=22" },
+  "scripts": { "test": "node --test prueba-calidad.mjs" },
+  "dependencies": {
+    "eslint": "10.13.0",
+    "eslint-plugin-sonarjs": "4.2.2",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.1"
+  }
+}
