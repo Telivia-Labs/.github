@@ -14,3 +14,6 @@ jobs:
         with:
           node-version: 22
       - run: node --test
+      - name: Pruebas del revisor de calidad
+        working-directory: calidad
+        run: npm ci --silent && npm test

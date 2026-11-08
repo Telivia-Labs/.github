@@ -1,0 +1,40 @@
+# Revisión «calidad» reutilizable (reemplaza a SonarCloud y al revisor del servidor, 8 nov 2026):
+# reglas gratuitas de SonarSource para JS/TS y funciones de hasta 50 líneas, solo en las líneas
+# nuevas del PR. Lee el código del PR sin ejecutarlo. Cada repo lo llama con un flujo corto.
+name: calidad
+on:
+  workflow_call:
+    inputs:
+      ref:
+        description: "Versión del revisor (rama, etiqueta o commit de Telivia-Labs/.github)"
+        type: string
+        default: main
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  calidad:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: Telivia-Labs/.github
+          ref: ${{ inputs.ref }}
+          path: .revisor
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: repo
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --silent
+        working-directory: .revisor/calidad
+      - run: node .revisor/calidad/revisar.js
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO_DIR: ${{ github.workspace }}/repo
