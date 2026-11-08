@@ -16,24 +16,37 @@ jobs:
   calidad:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # En la cola de unión no hay PR: el trabajo pasa sin revisar (ya se revisó en el PR) para que la
+    # cola no se quede esperando una revisión obligatoria.
+    env:
+      ES_PR: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_target' }}
     steps:
+      - name: En la cola de unión no se repite
+        if: env.ES_PR != 'true'
+        run: echo "Calidad ya revisada en el PR."
+
       - uses: actions/checkout@v4
+        if: env.ES_PR == 'true'
         with:
           repository: Telivia-Labs/.github
           ref: ${{ inputs.ref }}
           path: .revisor
           persist-credentials: false
       - uses: actions/checkout@v4
+        if: env.ES_PR == 'true'
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           path: repo
           persist-credentials: false
       - uses: actions/setup-node@v4
+        if: env.ES_PR == 'true'
         with:
           node-version: 22
       - run: npm ci --silent
+        if: env.ES_PR == 'true'
         working-directory: .revisor/calidad
       - run: node .revisor/calidad/revisar.js
+        if: env.ES_PR == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           PR: ${{ github.event.pull_request.number }}
