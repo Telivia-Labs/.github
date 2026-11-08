@@ -1,7 +1,8 @@
 // Revisor de forma de Telivia Labs. PR: título, secciones, tamaño y tarea enlazada.
 // Tareas (issues): campos obligatorios. Sin librerías (Node 22). Las funciones son puras;
 // main() solo lee el evento de GitHub, pide los archivos del PR y escribe el resultado.
-import { appendFileSync, readFileSync } from 'node:fs';
+import { appendFileSync, readFileSync, realpathSync } from 'node:fs';
+import { pathToFileURL } from 'node:url';
 
 export const MAX_TITULO = 72;
 export const MAX_LINEAS = 400;
@@ -10,18 +11,18 @@ export const LIMITES = { linea: 100, archivo: 300, funcion: 50 };
 const CODIGO = /\.(js|jsx|mjs|cjs|ts|tsx)$/;
 const TIPOS = 'feat|fix|perf|refactor|test|docs|build|ci|chore|revert';
 const TITULO = new RegExp(`^(${TIPOS})(\\([a-z0-9][a-z0-9./-]*\\))?!?: (\\S.*)$`);
-const ESPANOL = /\b(el|la|los|las|del|al|para|con|que|una|unos|por|sin|cuando|desde|y)\b/i;
+const ESPANOL = /\b(el|los|las|del|para|que|una|unos|por|cuando|desde|y)\b/i;
 export const SECCIONES = ['Qué cambia', 'Por qué', 'Cómo se probó', 'Cómo se revierte', 'Serie',
   'Tarea que cierra'];
 export const CAMPOS_TAREA = ['Qué', 'Para quién', 'Qué debe ser siempre cierto', 'Carpeta del área',
   'Fase', 'Agente', 'Tamaño estimado', 'Riesgos'];
 export const FASES = ['Fase 0', 'Fase 1', 'Agentes', 'Fase 2', 'Fase 3'];
 export const AGENTES = ['Claude', 'Codex'];
-const GENERADOS = ['package-lock.json', 'pnpm-lock.yaml', 'yarn.lock', '*.lock', 'dist/', 'build/',
+const GENERADOS = ['package-lock.json', 'pnpm-lock.yaml', 'yarn.lock', '*.lock', 'dist/',
   '*.min.js', '*.min.css', '*.map', '*.snap', '*.png', '*.jpg', '*.jpeg', '*.webp', '*.gif',
   '*.ico', '*.svg', '*.woff', '*.woff2'];
 const CLAVE_CIERRE = '(close[sd]?|fix(e[sd])?|resolve[sd]?)';
-const ENLACE = new RegExp(`\\b${CLAVE_CIERRE}\\s+(([\\w.-]+/[\\w.-]+)?#\\d+\\b|`
+const ENLACE = new RegExp(`\\b${CLAVE_CIERRE}\\s*:?\\s+(([\\w.-]+/[\\w.-]+)?#\\d+\\b|`
   + 'https://github\\.com/[\\w.-]+/[\\w.-]+/issues/\\d+)', 'i');
 
 const sinComentarios = (s) => String(s || '')
@@ -52,8 +53,10 @@ export function revisarTitulo(titulo) {
 export function secciones(texto) {
   const out = {};
   let actual = null;
+  let enCodigo = false; // un «## » dentro de un bloque de código no abre sección
   for (const l of sinComentarios(texto).split('\n')) {
-    const h = /^#{2,3}\s+(.+?)\s*#*\s*$/.exec(l);
+    if (/^\s*```/.test(l)) enCodigo = !enCodigo;
+    const h = !enCodigo && /^#{2,3}\s+(.+?)\s*#*\s*$/.exec(l);
     if (h) out[(actual = h[1].trim())] = '';
     else if (actual) out[actual] += l + '\n';
   }
@@ -147,7 +150,7 @@ export function revisarTarea(cuerpo) {
   const fuera = (c, lista) => val(c) && !lista.includes(val(c));
   if (fuera('Fase', FASES)) fallas.push(`«Fase» debe ser: ${FASES.join(', ')}.`);
   if (fuera('Agente', AGENTES)) fallas.push('«Agente» debe ser Claude o Codex.');
-  const tam = /^\d+/.exec(val('Tamaño estimado'));
+  const tam = /^\d+$/.exec(val('Tamaño estimado'));
   if (val('Tamaño estimado') && (!tam || +tam[0] < 1 || +tam[0] > MAX_LINEAS))
     fallas.push(`«Tamaño estimado» va en líneas, de 1 a ${MAX_LINEAS}; si no, son varias tareas.`);
   return fallas;
@@ -167,12 +170,19 @@ async function archivosDelPR(repo, n, token) {
   throw new Error('El PR tiene más de 3,000 archivos: no se puede revisar.');
 }
 
+// Actualizaciones automáticas de dependencias: no traen plantilla ni tarea.
+export const BOTS_SIN_FORMA = ['dependabot[bot]', 'renovate[bot]'];
+export const exento = (pr) => BOTS_SIN_FORMA.includes(pr?.user?.login);
+
 async function main(env = process.env) {
   const evento = JSON.parse(readFileSync(env.GITHUB_EVENT_PATH, 'utf8'));
   const extra = (env.GENERADOS || '').split(',').map((p) => p.trim()).filter(Boolean);
   let fallas;
   let resumen;
-  if (evento.pull_request) {
+  if (exento(evento.pull_request)) {
+    fallas = [];
+    resumen = 'PR de dependencias: no se revisa la forma.';
+  } else if (evento.pull_request) {
     const pr = evento.pull_request;
     const archivos = await archivosDelPR(env.GITHUB_REPOSITORY, pr.number, env.GH_TOKEN);
     const r = revisarPR({ titulo: pr.title, cuerpo: pr.body, archivos, extra });
@@ -193,7 +203,8 @@ async function main(env = process.env) {
   return fallas.length ? 1 : 0;
 }
 
-const directo = import.meta.url === `file://${process.argv[1]}`;
+const directo = process.argv[1]
+  && import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href;
 if (directo) main().then((c) => { process.exitCode = c; }, (e) => {
   console.error(`Forma: no se pudo revisar. ${e.message}`);
   process.exitCode = 1;

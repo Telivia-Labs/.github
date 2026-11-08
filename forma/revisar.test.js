@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { CAMPOS_TAREA, revisarCuerpo, revisarLimites, revisarPR, revisarTarea, revisarTitulo,
-  esGenerado } from './revisar.js';
+  esGenerado, exento } from './revisar.js';
 
 const leer = (f) => readFileSync(new URL(`../${f}`, import.meta.url), 'utf8');
 const CUERPO = `## Qué cambia
@@ -84,9 +84,9 @@ test('400 líneas pasan; 401 no; lo generado no cuenta', () => {
   assert.deepEqual(r.lineas, { contadas: 50, ignoradas: 6600 });
 });
 test('generados: carpeta, extensión y nombre exacto', () => {
-  const generados = ['dist/a.js', 'app/build/x.css', 'web/marca/logo.svg', 'a/yarn.lock'];
+  const generados = ['dist/a.js', 'web/dist/x.css', 'web/marca/logo.svg', 'a/yarn.lock'];
   for (const f of generados) assert.ok(esGenerado(f));
-  for (const f of ['src/distancia.js', 'src/lock.js']) assert.ok(!esGenerado(f));
+  for (const f of ['src/distancia.js', 'src/lock.js', 'scripts/build/a.js']) assert.ok(!esGenerado(f));
 });
 test('tarea completa pasa', () => assert.deepEqual(revisarTarea(TAREA), []));
 test('tarea: campo que falta, vacío o fuera de lista se rechaza', () => {
@@ -116,4 +116,13 @@ test('código nuevo: líneas de más de 100 y archivos nuevos de más de 300 se 
   assert.deepEqual(revisarLimites([a('src/b.js', nuevo(300), 'added')]), []);
   hay(revisarLimites([a('src/b.js', nuevo(301), 'added')]), /301 líneas \(máximo 300\)/);
   assert.deepEqual(revisarLimites([a('src/b.js', nuevo(301))]), []);
+});
+test('casos de la revisión: «Closes:», siglas, «##» en la salida, tamaño con coma y bots', () => {
+  assert.deepEqual(revisarCuerpo(CUERPO.replace('Closes #12', 'Closes: #12')), []);
+  assert.deepEqual(revisarTitulo('feat(math): add sin helpers for la timezone'), []);
+  const salida = CUERPO.replace('después: 140/140 bien', '## Summary\n140/140 bien');
+  assert.deepEqual(revisarCuerpo(salida), []);
+  hay(revisarTarea(TAREA.replace('180', '1,200')), /de 1 a 400/);
+  assert.ok(exento({ user: { login: 'dependabot[bot]' } }));
+  assert.ok(!exento({ user: { login: 'telivia-claude-codex[bot]' } }) && !exento(undefined));
 });
