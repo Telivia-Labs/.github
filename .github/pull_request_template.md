@@ -1,7 +1,8 @@
 <!-- Título: Conventional Commits en inglés, máximo 72 caracteres. Ej.: fix(cobros): cap payment at invoice balance -->
 <!-- Un propósito, máximo 400 líneas sin contar lo generado; si es más, PR consecutivos «N de M». -->
 <!-- Código nuevo o tocado: máximo 100 caracteres por línea, 300 líneas por archivo y 50 por función. -->
-<!-- El revisor de forma falla si falta una sección o si no se cumplen estos límites. -->
+<!-- El revisor de forma falla si falta una sección, si pasa de 400 líneas, si una línea nueva de -->
+<!-- código pasa de 100 caracteres o si un archivo nuevo pasa de 300. Las funciones: ESLint (limites). -->
 
 ## Qué cambia
 <!-- Una o dos frases en español claro, para Juan. -->
