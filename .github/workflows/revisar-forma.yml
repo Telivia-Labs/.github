@@ -1,0 +1,16 @@
+# Este repo también pasa por el revisor de forma, con la versión de la rama del PR.
+name: revisar-forma
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+  issues:
+    types: [opened, edited]
+permissions:
+  contents: read
+  pull-requests: read
+  issues: write
+jobs:
+  forma:
+    uses: ./.github/workflows/forma.yml
+    with:
+      ref: ${{ github.event.pull_request.head.sha || github.sha }}
