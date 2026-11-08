@@ -11,7 +11,7 @@ on:
         type: string
         default: ""
       ref:
-        description: "Versión de revisar.js (rama, etiqueta o commit). No sigue sola al @ref de uses: fíjala igual"
+        description: "Versión de revisar.js (rama, etiqueta o commit); no sigue al @ref de uses"
         type: string
         default: main
 permissions:
@@ -46,6 +46,8 @@ jobs:
           FALLAS: ${{ steps.revisar.outputs.fallas }}
           NUMERO: ${{ github.event.issue.number }}
         run: |
-          printf 'La tarea no tiene la forma de Telivia:\n\n%s\n\nEdítala y el revisor vuelve a mirar.\n' \
-            "$FALLAS" > aviso.md
+          {
+            printf 'La tarea no tiene la forma de Telivia:\n\n%s\n\n' "$FALLAS"
+            printf 'Edítala y el revisor vuelve a mirar.\n'
+          } > aviso.md
           gh issue comment "$NUMERO" --repo "$GITHUB_REPOSITORY" --body-file aviso.md
