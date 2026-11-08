@@ -13,7 +13,8 @@ const TIPOS = 'feat|fix|perf|refactor|test|docs|build|ci|chore|revert';
 const TITULO = new RegExp(`^(${TIPOS})(\\([a-z0-9][a-z0-9./-]*\\))?!?: (\\S.*)$`);
 const ESPANOL = /\b(el|los|las|del|para|que|una|unos|por|cuando|desde|y)\b/i;
 export const SECCIONES = ['Qué cambia', 'Por qué', 'Cómo se probó', 'Cómo se revierte', 'Serie',
-  'Tarea que cierra'];
+  'Agente', 'Tarea que cierra'];
+export const AGENTES_PR = ['Cerebro', 'Dexter']; // Cerebro es Claude; Dexter es Codex
 export const CAMPOS_TAREA = ['Qué', 'Para quién', 'Qué debe ser siempre cierto', 'Carpeta del área',
   'Fase', 'Agente', 'Tamaño estimado', 'Riesgos'];
 export const FASES = ['Fase 0', 'Fase 1', 'Agentes', 'Fase 2', 'Fase 3'];
@@ -104,6 +105,8 @@ export function revisarCuerpo(cuerpo) {
   const serie = nDeM(s.Serie);
   if (!vacio(s.Serie) && (!serie || serie[0] < 1 || serie[0] > serie[1]))
     fallas.push('«Serie» debe decir «N de M», por ejemplo «1 de 1» o «3 de 14».');
+  if (!vacio(s.Agente) && !AGENTES_PR.includes(s.Agente.trim()))
+    fallas.push('«Agente» debe decir Cerebro (Claude) o Dexter (Codex).');
   if (!vacio(s['Tarea que cierra']) && !ENLACE.test(s['Tarea que cierra']))
     fallas.push('«Tarea que cierra» debe enlazar una tarea: «Closes #12»'
       + ' (GitHub solo la cierra con Closes, Fixes o Resolves).');

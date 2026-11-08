@@ -24,6 +24,10 @@ después:
 <!-- «N de M». Si es un PR suelto: 1 de 1. Si parte un trabajo grande, di qué sigue. -->
 1 de 1
 
+## Agente
+<!-- Quién hizo el PR: Cerebro (Claude) o Dexter (Codex). -->
+
+
 ## Tarea que cierra
 <!-- La tarea (issue) que este PR termina. GitHub solo la cierra sola con «Closes». -->
 Closes #

@@ -6,7 +6,8 @@ Plantillas que GitHub aplica a todos los repos de la organización sin copiarlas
   carpeta del área, fase, agente (Claude o Codex), tamaño estimado (máximo 400 líneas) y riesgos.
   No hay tareas en blanco.
 - **PR** (`.github/pull_request_template.md`): qué cambia, por qué, cómo se probó (con salida real),
-  cómo se revierte, «N de M» y la tarea que cierra.
+  cómo se revierte, «N de M», el agente (Cerebro, que es Claude, o Dexter, que es Codex) y la tarea
+  que cierra.
 
 Límites: PR de máximo 400 líneas cambiadas sin contar lo generado (si es más, PR consecutivos «N de M»,
 sin excepciones). Código nuevo o tocado: máximo 100 caracteres por línea, 300 líneas por archivo y

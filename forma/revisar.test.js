@@ -25,6 +25,9 @@ Revertir este PR.
 ## Serie
 1 de 1
 
+## Agente
+Cerebro
+
 ## Tarea que cierra
 Closes #12
 `;
@@ -47,7 +50,7 @@ test('título mal: sin tipo, en español, largo, mayúscula o punto', () => {
 });
 test('cuerpo con todas las secciones pasa', () => assert.deepEqual(revisarCuerpo(CUERPO), []));
 test('cada sección que falta se rechaza', () => {
-  const todas = ['Qué cambia', 'Por qué', 'Cómo se probó', 'Cómo se revierte', 'Serie',
+  const todas = ['Qué cambia', 'Por qué', 'Cómo se probó', 'Cómo se revierte', 'Serie', 'Agente',
     'Tarea que cierra'];
   for (const s of todas) {
     const sin = CUERPO.replace(`## ${s}\n`, '');
@@ -133,4 +136,11 @@ test('casos de la revisión: «Closes:», siglas, «##» en la salida, tamaño c
   assert.match(lista(revisarTarea(TAREA.replace('180', '1,200'))), /de 1 a 400/);
   assert.ok(exento({ user: { login: 'dependabot[bot]' } }));
   assert.ok(!exento({ user: { login: 'telivia-claude-codex[bot]' } }) && !exento(undefined));
+});
+test('Agente: Cerebro o Dexter; otro nombre o vacío se rechaza', () => {
+  assert.deepEqual(revisarCuerpo(CUERPO.replace('## Agente\nCerebro', '## Agente\nDexter')), []);
+  assert.match(lista(revisarCuerpo(CUERPO.replace('## Agente\nCerebro', '## Agente\nClaude'))),
+    /Cerebro \(Claude\) o Dexter \(Codex\)/);
+  assert.match(lista(revisarCuerpo(CUERPO.replace('## Agente\nCerebro', '## Agente\n'))),
+    /«Agente» está vacía/);
 });
