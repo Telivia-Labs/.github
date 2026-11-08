@@ -86,7 +86,8 @@ test('400 líneas pasan; 401 no; lo generado no cuenta', () => {
 test('generados: carpeta, extensión y nombre exacto', () => {
   const generados = ['dist/a.js', 'web/dist/x.css', 'web/marca/logo.svg', 'a/yarn.lock'];
   for (const f of generados) assert.ok(esGenerado(f));
-  for (const f of ['src/distancia.js', 'src/lock.js', 'scripts/build/a.js']) assert.ok(!esGenerado(f));
+  const fuente = ['src/distancia.js', 'src/lock.js', 'scripts/build/a.js'];
+  for (const f of fuente) assert.ok(!esGenerado(f));
 });
 test('tarea completa pasa', () => assert.deepEqual(revisarTarea(TAREA), []));
 test('tarea: campo que falta, vacío o fuera de lista se rechaza', () => {
