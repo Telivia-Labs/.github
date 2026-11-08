@@ -56,17 +56,39 @@ export function secciones(texto) {
   let enCodigo = false; // un «## » dentro de un bloque de código no abre sección
   for (const l of sinComentarios(texto).split('\n')) {
     if (/^\s*```/.test(l)) enCodigo = !enCodigo;
-    const h = !enCodigo && /^#{2,3}\s+(.+?)\s*#*\s*$/.exec(l);
-    if (h) out[(actual = h[1].trim())] = '';
-    else if (actual) out[actual] += l + '\n';
+    const h = !enCodigo && /^#{2,3} /.test(l) ? l.replace(/^#+/, '').trim() : null;
+    if (h) {
+      actual = h;
+      out[actual] = '';
+    } else if (actual) out[actual] += l + '\n';
   }
   return out;
 }
 
 const vacio = (s) => !String(s || '').trim();
-const bloquesCodigo = (s) => [...String(s).matchAll(/```[^\n]*\n([\s\S]*?)```/g)].map((m) => m[1]);
+/** Lo que hay dentro de cada bloque de código («```»), sin regex que puedan atascarse. */
+function bloquesCodigo(s) {
+  const bloques = [];
+  let actual = null;
+  for (const l of String(s).split('\n')) {
+    if (l.trim().startsWith('```')) {
+      if (actual === null) actual = [];
+      else bloques.push(actual.join('\n')), (actual = null);
+    } else if (actual) actual.push(l);
+  }
+  return bloques;
+}
 const ROTULO = /^(antes|despu[eé]s):\s*$/i;
 const conSalida = (b) => b.split('\n').some((l) => l.trim() && !ROTULO.test(l.trim()));
+
+/** «3 de 14» → [3, 14], o null. Por palabras, sin regex que puedan atascarse. */
+function nDeM(texto) {
+  const w = String(texto || '').split(/\s/).filter(Boolean);
+  const i = w.indexOf('de');
+  const numero = (x) => (/^\d/.test(x || '') ? Number.parseInt(x, 10) : NaN);
+  const [n, m] = [numero(w[i - 1]), numero(w[i + 1])];
+  return i > 0 && n >= 0 && m >= 0 ? [n, m] : null;
+}
 
 /** Cuerpo del PR: secciones de la plantilla, con salida real, «N de M» y la tarea que cierra. */
 export function revisarCuerpo(cuerpo) {
@@ -79,8 +101,8 @@ export function revisarCuerpo(cuerpo) {
   const probo = s['Cómo se probó'];
   if (!vacio(probo) && !bloquesCodigo(probo).some(conSalida))
     fallas.push('«Cómo se probó» necesita la salida real dentro de un bloque de código (```).');
-  const serie = /(\d+)\s+de\s+(\d+)/.exec(s.Serie || '');
-  if (!vacio(s.Serie) && (!serie || +serie[1] < 1 || +serie[1] > +serie[2]))
+  const serie = nDeM(s.Serie);
+  if (!vacio(s.Serie) && (!serie || serie[0] < 1 || serie[0] > serie[1]))
     fallas.push('«Serie» debe decir «N de M», por ejemplo «1 de 1» o «3 de 14».');
   if (!vacio(s['Tarea que cierra']) && !ENLACE.test(s['Tarea que cierra']))
     fallas.push('«Tarea que cierra» debe enlazar una tarea: «Closes #12»'
@@ -193,12 +215,12 @@ async function main(env = process.env) {
     fallas = revisarTarea(evento.issue.body);
     resumen = `Tarea #${evento.issue.number}.`;
   } else throw new Error('El revisor de forma solo corre en PR y en tareas (issues).');
+  const lista = fallas.map((f) => '- ' + f).join('\n');
   const texto = fallas.length
-    ? `### Forma: falla\n${resumen}\n\n${fallas.map((f) => `- ${f}`).join('\n')}\n`
+    ? `### Forma: falla\n${resumen}\n\n${lista}\n`
     : `### Forma: bien\n${resumen}\n`;
   console.log(texto);
   if (env.GITHUB_STEP_SUMMARY) appendFileSync(env.GITHUB_STEP_SUMMARY, texto);
-  const lista = fallas.map((f) => `- ${f}`).join('\n');
   if (env.GITHUB_OUTPUT) appendFileSync(env.GITHUB_OUTPUT, `fallas<<FIN\n${lista}\nFIN\n`);
   return fallas.length ? 1 : 0;
 }
