@@ -123,13 +123,14 @@ export function esGenerado(ruta, extra = []) {
   });
 }
 
-/** Líneas cambiadas (sumadas + quitadas) sin lo generado. archivos: [{ filename, additions }]. */
+/** Líneas cambiadas (sumadas + quitadas) sin lo generado ni los archivos borrados completos
+ * (Juan, 8 nov 2026). archivos: [{ filename, additions, deletions, status }]. */
 export function contarLineas(archivos, extra = []) {
   let contadas = 0;
   let ignoradas = 0;
   for (const a of archivos) {
     const n = (a.additions || 0) + (a.deletions || 0);
-    if (esGenerado(a.filename, extra)) ignoradas += n;
+    if (esGenerado(a.filename, extra) || a.status === 'removed') ignoradas += n;
     else contadas += n;
   }
   return { contadas, ignoradas };

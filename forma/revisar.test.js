@@ -89,6 +89,16 @@ test('400 líneas pasan; 401 no; lo generado no cuenta', () => {
   assert.deepEqual(r.fallas, []);
   assert.deepEqual(r.lineas, { contadas: 50, ignoradas: 6600 });
 });
+test('un archivo borrado completo no cuenta; lo agregado sí (Juan, 8 nov 2026)', () => {
+  const titulo = 'docs: delete outdated docs';
+  const pr = (archivos) => revisarPR({ titulo, cuerpo: CUERPO, archivos });
+  const borrado = { filename: 'docs/viejo.md', additions: 0, deletions: 900, status: 'removed' };
+  const r = pr([borrado, { filename: 'docs/nuevo.md', additions: 30, deletions: 0 }]);
+  assert.deepEqual(r.fallas, []);
+  assert.deepEqual(r.lineas, { contadas: 30, ignoradas: 900 });
+  const parcial = { filename: 'docs/a.md', additions: 0, deletions: 401, status: 'modified' };
+  assert.match(lista(pr([parcial]).fallas), /401 líneas/);
+});
 test('generados: carpeta, extensión y nombre exacto', () => {
   const generados = ['dist/a.js', 'web/dist/x.css', 'web/marca/logo.svg', 'a/yarn.lock'];
   for (const f of generados) assert.ok(esGenerado(f));
