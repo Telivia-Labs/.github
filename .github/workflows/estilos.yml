@@ -1,0 +1,81 @@
+# Revisión «estilos» compartida de Telivia, en cada PR y en la cola de unión:
+#   stylelint   escala R29 (letra, peso, línea, espacios, radios, alto de botones y campos,
+#               colores con tokens) con Stylelint,
+#               solo en líneas nuevas o tocadas. Obligatoria en las reglas de cada repo.
+#   impeccable  detector de malas prácticas de diseño (impeccable detect, Apache-2.0, sin IA).
+#               Solo informa mientras «impeccable-obligatorio» sea false.
+# Cada repo la llama con: uses: Telivia/.github/.github/workflows/estilos.yml@main
+name: estilos
+on:
+  workflow_call:
+    inputs:
+      impeccable-obligatorio:
+        description: 'true = el detector de impeccable frena el PR; false = solo informa'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+env:
+  BASE: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha }}
+  NUEVO: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+  DO_NOT_TRACK: '1'
+jobs:
+  stylelint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Código del PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Revisión compartida de Telivia
+        uses: actions/checkout@v4
+        with:
+          repository: Telivia/.github
+          ref: main
+          path: .telivia
+          sparse-checkout: estilos
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar Stylelint
+        run: npm ci --prefix .telivia/estilos --no-audit --no-fund
+      - name: Escala R29 en líneas nuevas
+        run: node .telivia/estilos/revisar-estilos.mjs "$BASE" "$NUEVO"
+
+  impeccable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Código del PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Revisión compartida de Telivia
+        uses: actions/checkout@v4
+        with:
+          repository: Telivia/.github
+          ref: main
+          path: .telivia
+          sparse-checkout: estilos
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar impeccable
+        run: npm ci --prefix .telivia/estilos --no-audit --no-fund
+      - name: Detector de impeccable en archivos tocados
+        env:
+          OBLIGATORIO: ${{ inputs.impeccable-obligatorio }}
+        run: bash .telivia/estilos/impeccable.sh
+      - name: Guardar hallazgos para medir falsos positivos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: impeccable
+          path: impeccable.json
+          if-no-files-found: ignore
+          retention-days: 30
