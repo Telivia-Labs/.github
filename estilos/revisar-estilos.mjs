@@ -8,7 +8,9 @@ import path from 'node:path';
 import stylelint from 'stylelint';
 
 const EXTENSIONES = /\.(css|html?)$/i;
-const FUERA = /(^|\/)(node_modules|vendor|dist)\/|\.min\.css$/i;
+const CARPETA_FUERA = /(?:^|\/)(?:node_modules|vendor|dist)\//i;
+const MINIFICADO = /\.min\.css$/i;
+const fuera = (ruta) => CARPETA_FUERA.test(ruta) || MINIFICADO.test(ruta);
 const CONFIG = fileURLToPath(new URL('./stylelint.config.mjs', import.meta.url));
 
 // Lee un diff unificado con -U0 y devuelve { archivo: Set(líneas nuevas o tocadas) }.
@@ -33,7 +35,7 @@ export function lineasNuevas(diff) {
 }
 
 export function archivosARevisar(mapa) {
-  return Object.keys(mapa).filter((f) => EXTENSIONES.test(f) && !FUERA.test(f) && mapa[f].size);
+  return Object.keys(mapa).filter((f) => EXTENSIONES.test(f) && !fuera(f) && mapa[f].size);
 }
 
 // Deja solo los avisos de Stylelint que caen en líneas nuevas o tocadas.
@@ -48,7 +50,10 @@ export function filtrar(resultados, mapa, raiz) {
   return problemas;
 }
 
-const limpiar = (texto) => texto.replace(/\s*\([\w/-]+\)$/, '').replace(/[\r\n]+/g, ' ');
+const limpiar = (texto) => {
+  const sinRegla = texto.trimEnd().replace(/\([\w/-]+\)$/, '').trimEnd();
+  return sinRegla.replace(/[\r\n]+/g, ' ');
+};
 
 function reportar(problemas) {
   for (const p of problemas) {
@@ -64,7 +69,8 @@ function reportar(problemas) {
 async function main([base, nuevo]) {
   if (!base || !nuevo) throw new Error('Uso: node revisar-estilos.mjs <base> <nuevo>');
   const argumentos = ['diff', '-U0', '--no-color', '--diff-filter=AMR', `${base}...${nuevo}`];
-  const diff = execFileSync('git', argumentos, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  const opciones = { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 };
+  const diff = execFileSync('/usr/bin/git', argumentos, opciones);
   const mapa = lineasNuevas(diff);
   const archivos = archivosARevisar(mapa);
   if (!archivos.length) return reportar([]);

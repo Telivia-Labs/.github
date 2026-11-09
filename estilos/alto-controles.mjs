@@ -26,7 +26,10 @@ export const messages = ruleMessages(ruleName, {
 // Números en px fuera de calc/var con tokens. Devuelve los que no están en la escala.
 export function fueraDeEscala(valor) {
   if (/var\(--/.test(valor)) return [];
-  const numeros = [...valor.matchAll(/(-?\d*\.?\d+)px\b/g)].map((m) => Number(m[1]));
+  const numeros = valor.split(/[\s,()]+/)
+    .filter((parte) => parte.toLowerCase().endsWith('px'))
+    .map((parte) => Number(parte.slice(0, -2)))
+    .filter((n) => Number.isFinite(n));
   return numeros.filter((n) => !ALTOS.includes(n));
 }
 
