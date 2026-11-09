@@ -2,7 +2,7 @@ name: Tarea
 description: Una tarea de un solo propósito que cabe en un PR de máximo 400 líneas.
 title: "tipo(area): descripción corta"
 labels: ["tarea"]
-projects: ["Telivia-Labs/2"]
+projects: ["Telivia/2"]
 body:
   - type: markdown
     attributes:

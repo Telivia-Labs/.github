@@ -74,8 +74,8 @@ test('sin salida real, sin «N de M» o sin tarea se rechaza', () => {
     /enlazar una tarea/);
 });
 test('acepta enlaces a tareas de otro repo o por dirección', () => {
-  assert.deepEqual(revisarCuerpo(CUERPO.replace('Closes #12', 'Fixes Telivia-Labs/livia#3')), []);
-  const url = 'Resolves https://github.com/Telivia-Labs/telivia-lab/issues/7';
+  assert.deepEqual(revisarCuerpo(CUERPO.replace('Closes #12', 'Fixes Telivia/livia#3')), []);
+  const url = 'Resolves https://github.com/Telivia/telivia-lab/issues/7';
   assert.deepEqual(revisarCuerpo(CUERPO.replace('Closes #12', url)), []);
 });
 test('400 líneas pasan; 401 no; lo generado no cuenta', () => {
