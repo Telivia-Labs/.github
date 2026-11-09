@@ -1,0 +1,5 @@
+# Excepciones de OSV-Scanner para el revisor de calidad (herramienta de CI, no producto).
+[[IgnoredVulns]]
+id = "GHSA-g3hv-75wg-m249"
+ignoreUntil = 2027-02-09
+reason = "minimatch 10 (ReDoS en globs) solo se corrige en 11; ESLint 10 aún exige la 10. Revisar al salir ESLint compatible."
