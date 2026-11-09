@@ -1,0 +1,31 @@
+# Unión automática nativa de GitHub, reutilizable (reemplaza al orquestador del servidor).
+# Activa «auto-merge» en el PR: GitHub lo une solo cuando todas las revisiones obligatorias de la
+# rama están en verde (con la cola de unión, lo pone en la cola). Las reglas de la rama deciden.
+# El repo lo llama desde pull_request_target, con permisos contents y pull-requests de escritura.
+name: union-automatica
+on:
+  workflow_call:
+    inputs:
+      metodo:
+        description: "merge, squash o rebase"
+        type: string
+        default: merge
+jobs:
+  activar:
+    if: >-
+      github.event.pull_request.draft == false
+      && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Activar la unión automática
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          METODO: ${{ inputs.metodo }}
+        run: |
+          if gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --auto "--$METODO"; then
+            echo "Unión automática activada para #$PR."
+          else
+            echo "No se pudo activar: revisar que «Allow auto-merge» esté encendido en el repo."
+          fi
