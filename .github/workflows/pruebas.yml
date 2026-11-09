@@ -17,3 +17,6 @@ jobs:
       - name: Pruebas del revisor de calidad
         working-directory: calidad
         run: npm ci --silent && npm test
+      - name: Pruebas de la revisión de estilos
+        working-directory: estilos
+        run: npm ci --silent && npm test
