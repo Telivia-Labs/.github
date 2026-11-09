@@ -1,0 +1,40 @@
+name: Error
+description: Algo que funciona mal. Su arreglo lleva una prueba que falla antes y pasa después.
+title: "fix(area): "
+labels: ["error"]
+body:
+  - type: textarea
+    id: que-pasa
+    attributes:
+      label: Qué pasa
+      description: Lo que se ve, en una o dos frases. Sin claves ni datos personales.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Qué debería pasar
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Cómo reproducirlo
+      value: "1. "
+    validations:
+      required: true
+  - type: dropdown
+    id: gravedad
+    attributes:
+      label: Gravedad
+      options: ["P0 (dinero, datos entre empresas o producción caída)", "P1 (bloquea un trabajo)",
+        "P2 (molesta)"]
+    validations:
+      required: true
+  - type: input
+    id: donde
+    attributes:
+      label: Dónde
+      description: Pantalla, módulo o dirección.
+    validations:
+      required: true

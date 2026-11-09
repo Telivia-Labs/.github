@@ -1,0 +1,46 @@
+name: Épica
+description: Un objetivo grande que se parte en tareas de un PR cada una.
+title: "Épica: "
+labels: ["epica"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Una épica agrupa tareas. Sus tareas se enlazan como sub-tareas (sub-issues).
+        Nada pasa a «Lista» en el tablero hasta que Juan diga «empezar».
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo
+      description: Qué existe cuando la épica termina, en dos o tres frases.
+    validations:
+      required: true
+  - type: textarea
+    id: por-que
+    attributes:
+      label: Por qué
+      description: La decisión de Juan o el plan que la origina.
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación
+      description: Cómo se sabe que está terminada. Uno por línea, comprobable.
+      value: "- [ ] "
+    validations:
+      required: true
+  - type: textarea
+    id: depende
+    attributes:
+      label: Depende de
+      description: "Épicas o decisiones que deben estar listas antes. Ej.: #12. «Nada» si no hay."
+    validations:
+      required: true
+  - type: textarea
+    id: decisiones
+    attributes:
+      label: Decisiones de Juan pendientes
+      description: Lo de negocio, dinero, privacidad o diseño que falta decidir. «Ninguna» si no hay.
+    validations:
+      required: true
