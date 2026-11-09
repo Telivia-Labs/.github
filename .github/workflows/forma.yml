@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: Telivia-Labs/.github
+          repository: Telivia/.github
           ref: ${{ inputs.ref }}
           path: .forma
           persist-credentials: false

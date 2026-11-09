@@ -40,7 +40,7 @@ permissions:
   issues: write
 jobs:
   forma:
-    uses: Telivia-Labs/.github/.github/workflows/forma.yml@main
+    uses: Telivia/.github/.github/workflows/forma.yml@main
     # with:
     #   generados: "supabase/tipos/, *.generado.ts"   # lo que no cuenta como líneas
 ```
