@@ -15,10 +15,10 @@ const ESPANOL = /\b(el|los|las|del|para|que|una|unos|por|cuando|desde|y)\b/i;
 export const SECCIONES = ['Qué cambia', 'Por qué', 'Cómo se probó', 'Cómo se revierte', 'Serie',
   'Agente', 'Tarea que cierra'];
 export const AGENTES_PR = ['Cerebro', 'Dexter']; // Cerebro es Claude; Dexter es Codex
-export const CAMPOS_TAREA = ['Qué', 'Para quién', 'Qué debe ser siempre cierto', 'Carpeta del área',
-  'Fase', 'Agente', 'Tamaño estimado', 'Riesgos'];
-export const FASES = ['Fase 0', 'Fase 1', 'Agentes', 'Fase 2', 'Fase 3'];
-export const AGENTES = ['Claude', 'Codex'];
+export const CAMPOS_TAREA = ['Qué', 'Por qué', 'Qué debe ser siempre cierto',
+  'Criterios de aceptación', 'Depende de', 'Tamaño', 'Agente', 'Riesgos'];
+export const TAMANOS = ['S (hasta 100 líneas)', 'M (hasta 250)', 'L (hasta 400)'];
+export const AGENTES = ['Cerebro (Claude)', 'Dexter (Codex)', 'Juan'];
 const GENERADOS = ['package-lock.json', 'pnpm-lock.yaml', 'yarn.lock', '*.lock', 'dist/',
   '*.min.js', '*.min.css', '*.map', '*.snap', '*.png', '*.jpg', '*.jpeg', '*.webp', '*.gif',
   '*.ico', '*.svg', '*.woff', '*.woff2'];
@@ -164,7 +164,7 @@ export function revisarPR({ titulo, cuerpo, archivos = [], extra = [] }) {
   return { fallas, lineas };
 }
 
-/** Tarea (issue): cada campo obligatorio lleno, fase y agente válidos, tamaño de 1 a 400 líneas. */
+/** Tarea (issue): cada campo obligatorio lleno, agente y tamaño de la lista del formulario. */
 export function revisarTarea(cuerpo) {
   const s = secciones(cuerpo);
   const val = (c) => ((s[c] || '').trim() === '_No response_' ? '' : (s[c] || '').trim());
@@ -174,11 +174,9 @@ export function revisarTarea(cuerpo) {
     else if (!val(c)) fallas.push(`El campo «${c}» está vacío.`);
   }
   const fuera = (c, lista) => val(c) && !lista.includes(val(c));
-  if (fuera('Fase', FASES)) fallas.push(`«Fase» debe ser: ${FASES.join(', ')}.`);
-  if (fuera('Agente', AGENTES)) fallas.push('«Agente» debe ser Claude o Codex.');
-  const tam = /^\d+$/.exec(val('Tamaño estimado'));
-  if (val('Tamaño estimado') && (!tam || +tam[0] < 1 || +tam[0] > MAX_LINEAS))
-    fallas.push(`«Tamaño estimado» va en líneas, de 1 a ${MAX_LINEAS}; si no, son varias tareas.`);
+  if (fuera('Agente', AGENTES)) fallas.push(`«Agente» debe ser: ${AGENTES.join(', ')}.`);
+  if (fuera('Tamaño', TAMANOS))
+    fallas.push(`«Tamaño» debe ser S, M o L (hasta ${MAX_LINEAS}); si no, son varias tareas.`);
   return fallas;
 }
 
