@@ -31,10 +31,10 @@ Cerebro
 ## Tarea que cierra
 Closes #12
 `;
-const TAREA = `### Qué\n\nExportar facturas a CSV.\n\n### Para quién\n\nJuan\n\n
+const TAREA = `### Qué\n\nExportar facturas a CSV.\n\n### Por qué\n\nLo pidió Juan.\n\n
 ### Qué debe ser siempre cierto\n\nEl total del CSV es el del sistema.\n\n
-### Carpeta del área\n\nsrc/facturas/\n\n### Fase\n\nFase 1\n\n### Agente\n\nCodex\n\n
-### Tamaño estimado\n\n180\n\n### Riesgos\n\nNinguno.\n`;
+### Criterios de aceptación\n\n- [ ] El CSV suma lo del sistema\n\n### Depende de\n\nNada\n\n
+### Tamaño\n\nM (hasta 250)\n\n### Agente\n\nDexter (Codex)\n\n### Riesgos\n\nNinguno.\n`;
 
 test('título bien: Conventional Commits en inglés', () => {
   assert.deepEqual(revisarTitulo('fix(cobros): cap payment at invoice balance'), []);
@@ -109,12 +109,11 @@ test('tarea completa pasa', () => assert.deepEqual(revisarTarea(TAREA), []));
 test('tarea: campo que falta, vacío o fuera de lista se rechaza', () => {
   assert.match(lista(revisarTarea(TAREA.replace('### Riesgos\n\nNinguno.\n', ''))),
     /Falta el campo «Riesgos»/);
-  assert.match(lista(revisarTarea(TAREA.replace('Juan', '_No response_'))),
-    /«Para quién» está vacío/);
-  assert.match(lista(revisarTarea(TAREA.replace('Codex', 'Gemini'))), /Claude o Codex/);
-  assert.match(lista(revisarTarea(TAREA.replace('Fase 1', 'Fase 9'))), /«Fase» debe ser/);
-  assert.match(lista(revisarTarea(TAREA.replace('180', '900'))), /de 1 a 400/);
-  assert.match(lista(revisarTarea(TAREA.replace('180', 'mucho'))), /de 1 a 400/);
+  assert.match(lista(revisarTarea(TAREA.replace('Lo pidió Juan.', '_No response_'))),
+    /«Por qué» está vacío/);
+  assert.match(lista(revisarTarea(TAREA.replace('Dexter (Codex)', 'Gemini'))),
+    /«Agente» debe ser/);
+  assert.match(lista(revisarTarea(TAREA.replace('M (hasta 250)', 'XL'))), /S, M o L/);
   assert.match(lista(revisarTarea('')), /Falta el campo «Qué»/);
 });
 test('los campos que exige el revisor son los del formulario de tareas', () => {
@@ -143,7 +142,7 @@ test('casos de la revisión: «Closes:», siglas, «##» en la salida, tamaño c
   assert.deepEqual(revisarTitulo('feat(math): add sin helpers for la timezone'), []);
   const salida = CUERPO.replace('después: 140/140 bien', '## Summary\n140/140 bien');
   assert.deepEqual(revisarCuerpo(salida), []);
-  assert.match(lista(revisarTarea(TAREA.replace('180', '1,200'))), /de 1 a 400/);
+  assert.match(lista(revisarTarea(TAREA.replace('M (hasta 250)', 'M (1,200)'))), /S, M o L/);
   assert.ok(exento({ user: { login: 'dependabot[bot]' } }));
   assert.ok(!exento({ user: { login: 'telivia-claude-codex[bot]' } }) && !exento(undefined));
 });

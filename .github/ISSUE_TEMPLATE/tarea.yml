@@ -1,17 +1,14 @@
 name: Tarea
-description: Una tarea de un solo propósito que cabe en un PR de máximo 400 líneas.
+description: Un solo propósito que cabe en un PR de máximo 400 líneas.
 title: "tipo(area): descripción corta"
 labels: ["tarea"]
-projects: ["Telivia/2"]
 body:
   - type: markdown
     attributes:
       value: |
         Un propósito por tarea. Si el título lleva «y», son dos tareas.
-        Límites: PR de máximo 400 líneas sin contar lo generado (si es más, PR consecutivos «N de M»);
-        código nuevo o tocado de máximo 100 caracteres por línea, 300 líneas por archivo y 50 por función.
-        Lo que no se sabe se escribe «por confirmar»; no se inventa.
-        Los agentes no llenan esto a mano: usan `scripts/nueva-tarea.js` del orquestador.
+        Límites: PR de 400 líneas; código de 100 caracteres por línea, 300 líneas por archivo y 50
+        por función. Lo que no se sabe se escribe «por confirmar»; no se inventa.
   - type: textarea
     id: que
     attributes:
@@ -19,53 +16,53 @@ body:
       description: Qué debe existir al terminar, en una o dos frases.
     validations:
       required: true
-  - type: input
-    id: para-quien
+  - type: textarea
+    id: por-que
     attributes:
-      label: Para quién
-      description: Quién lo usa o lo pidió (Juan, el equipo, un cliente, un rol).
+      label: Por qué
+      description: Para quién es y qué problema resuelve.
     validations:
       required: true
   - type: textarea
     id: invariante
     attributes:
       label: Qué debe ser siempre cierto
-      description: "2 o 3 frases. Ej.: un cobro nunca supera el saldo de la factura."
+      description: "2 o 3 frases. Ej.: una empresa nunca ve facturas de otra."
     validations:
       required: true
-  - type: input
-    id: carpeta
+  - type: textarea
+    id: criterios
     attributes:
-      label: Carpeta del área
-      description: "Dónde vive el cambio. Ej.: src/funcionalidades/cobros/"
+      label: Criterios de aceptación
+      description: Uno por línea, comprobable con una prueba.
+      value: "- [ ] "
+    validations:
+      required: true
+  - type: textarea
+    id: depende
+    attributes:
+      label: Depende de
+      description: "Tareas que deben estar unidas antes. Ej.: #34. «Nada» si no hay."
     validations:
       required: true
   - type: dropdown
-    id: fase
+    id: tamano
     attributes:
-      label: Fase
-      options: ["Fase 0", "Fase 1", "Agentes", "Fase 2", "Fase 3"]
+      label: Tamaño
+      options: ["S (hasta 100 líneas)", "M (hasta 250)", "L (hasta 400)"]
     validations:
       required: true
   - type: dropdown
     id: agente
     attributes:
       label: Agente
-      options: ["Claude", "Codex"]
-    validations:
-      required: true
-  - type: input
-    id: tamano
-    attributes:
-      label: Tamaño estimado
-      description: Líneas cambiadas, sin contar lo generado. Máximo 400; si es más, son varias tareas.
-      placeholder: "120"
+      options: ["Cerebro (Claude)", "Dexter (Codex)"]
     validations:
       required: true
   - type: textarea
     id: riesgos
     attributes:
       label: Riesgos
-      description: Qué puede salir mal y si toca dinero, permisos, base de datos o producción.
+      description: Qué puede salir mal y si toca dinero, permisos, datos entre empresas o producción.
     validations:
       required: true

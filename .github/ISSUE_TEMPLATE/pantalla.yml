@@ -1,0 +1,59 @@
+name: Pantalla
+description: Una pantalla nueva o rediseñada. Necesita su ficha aprobada por Juan.
+title: "feat(area): pantalla de "
+labels: ["tarea", "pantalla", "decision-juan"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ninguna pantalla se construye sin ficha aprobada por Juan. Sigue el manual R29 y sus tokens.
+        Cuando Juan apruebe la ficha, se quita la etiqueta «decision-juan».
+  - type: input
+    id: para-quien
+    attributes:
+      label: Para quién
+      description: El rol que la usa.
+    validations:
+      required: true
+  - type: textarea
+    id: pregunta
+    attributes:
+      label: Qué pregunta responde
+      description: Lo que esa persona necesita saber o hacer al abrirla.
+    validations:
+      required: true
+  - type: textarea
+    id: datos
+    attributes:
+      label: Origen de cada dato
+      description: Cada cifra o lista y de dónde sale (Odoo, Supabase, otro servicio).
+    validations:
+      required: true
+  - type: textarea
+    id: acciones
+    attributes:
+      label: Acciones y roles
+      description: Cada botón, qué hace y qué rol puede usarlo.
+    validations:
+      required: true
+  - type: textarea
+    id: estados
+    attributes:
+      label: Estados y textos
+      description: Cargando, vacío, error y sin permiso, con sus textos en español e inglés.
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación
+      value: "- [ ] Celular y escritorio, día y noche\n- [ ] Contraste AA\n- [ ] "
+    validations:
+      required: true
+  - type: textarea
+    id: depende
+    attributes:
+      label: Depende de
+      description: "«Nada» si no hay."
+    validations:
+      required: true

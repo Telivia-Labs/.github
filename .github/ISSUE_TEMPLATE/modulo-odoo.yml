@@ -1,0 +1,59 @@
+name: Módulo de Odoo
+description: Un módulo propio o de la comunidad (OCA) para Odoo Community 19.
+title: "feat(odoo): "
+labels: ["tarea", "odoo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Solo Odoo Community 19. Nada de Enterprise. Un módulo AGPL (muchos de OCA) se avisa a
+        Juan antes de usarlo como dependencia de un módulo propio.
+  - type: input
+    id: modulo
+    attributes:
+      label: Módulo
+      description: "Nombre técnico. Ej.: telivia_connector o account_financial_report."
+    validations:
+      required: true
+  - type: dropdown
+    id: origen
+    attributes:
+      label: Origen
+      options: ["Propio (telivia-odoo)", "OCA", "Odoo Community"]
+    validations:
+      required: true
+  - type: input
+    id: licencia
+    attributes:
+      label: Licencia
+      description: "LGPL-3, AGPL-3, MIT… Va también en THIRD_PARTY_LICENSES."
+    validations:
+      required: true
+  - type: textarea
+    id: que
+    attributes:
+      label: Qué hace para Telivia
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación
+      description: Incluye las pruebas de Odoo que deben pasar.
+      value: "- [ ] "
+    validations:
+      required: true
+  - type: textarea
+    id: depende
+    attributes:
+      label: Depende de
+      description: "«Nada» si no hay."
+    validations:
+      required: true
+  - type: dropdown
+    id: tamano
+    attributes:
+      label: Tamaño
+      options: ["S (hasta 100 líneas)", "M (hasta 250)", "L (hasta 400)"]
+    validations:
+      required: true
