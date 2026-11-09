@@ -1,0 +1,15 @@
+{
+  "name": "telivia-estilos",
+  "private": true,
+  "type": "module",
+  "description": "Revisión de estilos de Telivia: Stylelint con la escala R29 y el detector de impeccable.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test": "node --test prueba-estilos.mjs"
+  },
+  "dependencies": {
+    "impeccable": "4.8.1",
+    "postcss-html": "2.0.0",
+    "stylelint": "18.0.0"
+  }
+}
