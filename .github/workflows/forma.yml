@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v4
         if: env.EN_COLA != 'true'
         with:
-          repository: Telivia-Labs/.github
+          repository: Telivia/.github
           ref: ${{ inputs.ref }}
           path: .forma
           persist-credentials: false
