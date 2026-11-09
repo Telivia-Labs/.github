@@ -1,0 +1,12 @@
+# Revisiones gratis de seguridad de Telivia (Telivia/.github): claves (gitleaks), librerías con
+# fallas (OSV-Scanner) y flujos bien escritos (actionlint), en cada PR y en la cola de unión.
+name: seguridad
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  merge_group:
+permissions:
+  contents: read
+jobs:
+  seguridad:
+    uses: Telivia/.github/.github/workflows/seguridad.yml@main

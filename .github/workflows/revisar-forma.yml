@@ -1,16 +1,14 @@
-# Este repo también pasa por el revisor de forma, con la versión de la rama del PR.
+# Revisor de forma de Telivia (Telivia/.github): título, secciones, tamaño, tarea enlazada y
+# límites del código nuevo de cada PR. En la cola de unión pasa sin repetir.
 name: revisar-forma
 on:
   pull_request:
     types: [opened, edited, synchronize, reopened]
-  issues:
-    types: [opened, edited]
+  merge_group:
 permissions:
   contents: read
   pull-requests: read
   issues: write
 jobs:
   forma:
-    uses: ./.github/workflows/forma.yml
-    with:
-      ref: ${{ github.event.pull_request.head.sha || github.sha }}
+    uses: Telivia/.github/.github/workflows/forma.yml@main

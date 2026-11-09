@@ -1,0 +1,12 @@
+# Unión automática nativa de GitHub (Telivia/.github): al abrir un PR listo activa «auto-merge»;
+# GitHub lo une solo cuando todas las revisiones obligatorias de la rama están en verde.
+name: union-automatica
+on:
+  pull_request_target:
+    types: [opened, reopened, ready_for_review]
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  union:
+    uses: Telivia/.github/.github/workflows/union-automatica.yml@main

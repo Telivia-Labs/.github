@@ -1,0 +1,13 @@
+# Revisión «calidad» compartida de Telivia (Telivia/.github): reglas gratuitas de SonarSource
+# para JS/TS y funciones de hasta 50 líneas, solo en líneas nuevas. En la cola pasa sin repetir.
+name: calidad-github
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  merge_group:
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  calidad-github:
+    uses: Telivia/.github/.github/workflows/calidad.yml@main
