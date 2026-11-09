@@ -13,9 +13,19 @@ const CARPETA_GENERADA =
 const MINIFICADO = /\.min\.(?:js|css)$/i;
 const esGenerado = (ruta) => CARPETA_GENERADA.test(ruta) || MINIFICADO.test(ruta);
 
+/** ¿Es código de terceros copiado tal cual? «dir/», «*.ext» o el nombre exacto (como forma). */
+export function esDeTerceros(ruta, terceros = []) {
+  return terceros.some((p) => {
+    if (p.endsWith('/')) return ruta.startsWith(p);
+    if (p.startsWith('*.')) return ruta.endsWith(p.slice(1));
+    return ruta === p;
+  });
+}
+
 const JS = /\.(m?js|cjs|jsx)$/;
 const TS = /\.(m?ts|cts|tsx)$/;
-const SOPORTADO = (r) => (JS.test(r) || TS.test(r)) && !esGenerado(r);
+const SOPORTADO = (r, terceros) =>
+  (JS.test(r) || TS.test(r)) && !esGenerado(r) && !esDeTerceros(r, terceros);
 
 export function configuracion() {
   const comun = { ecmaVersion: 'latest', sourceType: 'module' };
@@ -55,9 +65,10 @@ export function soloNuevas(resultados, nuevasDe, base) {
   return fallas;
 }
 
-/** Revisa los archivos JS/TS del PR ya descargado en dir. Devuelve { fallas, revisados }. */
-export async function revisarCalidad(dir, archivos) {
-  const lista = archivos.filter((a) => a.status !== 'removed' && SOPORTADO(a.filename));
+/** Revisa los archivos JS/TS del PR ya descargado en dir. Devuelve { fallas, revisados }.
+ * terceros: rutas de código ajeno copiado tal cual (p. ej. piezas de shadcn) que no se revisan. */
+export async function revisarCalidad(dir, archivos, terceros = []) {
+  const lista = archivos.filter((a) => a.status !== 'removed' && SOPORTADO(a.filename, terceros));
   if (!lista.length) return { fallas: [], revisados: 0 };
   const patches = new Map(lista.map((a) => [a.filename, lineasNuevas(a.patch)]));
   const eslint = new ESLint({

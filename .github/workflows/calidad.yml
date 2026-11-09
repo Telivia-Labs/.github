@@ -9,6 +9,10 @@ on:
         description: "Versión del revisor (rama, etiqueta o commit de Telivia/.github)"
         type: string
         default: main
+      terceros:
+        description: "Código de terceros copiado tal cual que no se revisa (dir/, *.ext), con comas"
+        type: string
+        default: ""
 permissions:
   contents: read
   pull-requests: read
@@ -51,3 +55,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR: ${{ github.event.pull_request.number }}
           REPO_DIR: ${{ github.workspace }}/repo
+          TERCEROS: ${{ inputs.terceros }}
