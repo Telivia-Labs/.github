@@ -4,6 +4,7 @@ import { appendFileSync } from 'node:fs';
 import { revisarCalidad } from './calidad.js';
 
 const { GH_TOKEN, GITHUB_REPOSITORY, PR, REPO_DIR, GITHUB_STEP_SUMMARY } = process.env;
+const TERCEROS = (process.env.TERCEROS || '').split(',').map((p) => p.trim()).filter(Boolean);
 
 async function archivosDelPR() {
   const todos = [];
@@ -20,7 +21,7 @@ async function archivosDelPR() {
   return todos;
 }
 
-const { fallas, revisados } = await revisarCalidad(REPO_DIR, await archivosDelPR());
+const { fallas, revisados } = await revisarCalidad(REPO_DIR, await archivosDelPR(), TERCEROS);
 const lista = fallas.map((f) => '- ' + f).join('\n');
 const resumen = fallas.length
   ? `### Calidad: ${fallas.length} falla(s)\n\n${lista}\n`

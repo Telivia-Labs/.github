@@ -57,3 +57,12 @@ test('calidad: TypeScript se lee; sin archivos JS/TS no revisa nada', async () =
   const swift = await revisarCalidad(dir, [{ filename: 'a.swift', status: 'added' }]);
   assert.equal(swift.revisados, 0);
 });
+
+test('calidad: el código de terceros marcado no se revisa', async () => {
+  const dir = repo({ 'src/components/ui/larga.ts': LARGA });
+  const archivos = [{ filename: 'src/components/ui/larga.ts', status: 'added', patch: todoNuevo(LARGA) }];
+  const sin = await revisarCalidad(dir, archivos);
+  assert.ok(sin.fallas.length > 0, 'sin marcar debe fallar');
+  const con = await revisarCalidad(dir, archivos, ['src/components/ui/']);
+  assert.deepEqual(con, { fallas: [], revisados: 0 });
+});
