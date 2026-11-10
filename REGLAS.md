@@ -74,7 +74,7 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   - la empresa cliente se ve como ícono cuadrado pequeño y su nombre en el selector de empresa;
   - el logo del cliente (horizontal) y su color van en lo que reciben sus clientes: facturas, PDF,
     cotizaciones, correos, recibos, portal y página de pago; abajo, en chiquito, la firma de
-    Telivia (texto por decidir con Juan);
+    Telivia: «Powered by» y el logo pequeño de Telivia, igual en español y en inglés;
   - al cliente se le piden dos archivos: logo cuadrado y logo horizontal;
   - los colores del cliente no cambian el panel: el panel usa las 4 paletas del R29.
   - **LIVIA** (orden de Juan, 10 nov 2026): su logo es el de Telivia sin la T y la E, con las
