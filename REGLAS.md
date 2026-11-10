@@ -71,6 +71,11 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 - **Logos oficiales en SVG**, nunca escritos como texto. Cambian de color con el tema.
   - Lumens no lleva nada debajo del logo.
   - Las empresas clientes llevan «Con la tecnología de Telivia».
+  - **LIVIA** (orden de Juan, 10 nov 2026): su logo es el de Telivia sin la T y la E, con las
+    mismas formas oficiales. En grande va el logo; el nombre «LIVIA» en texto solo dentro de
+    frases y textos pequeños. Familia de marcas: Intelivia, Telivia, Livia y Vía.
+- El área Agents se llama **LIVIA**: una sola asistente con funciones, vendida como paquete aparte
+  de Telivia, con la declaración de impuestos entre sus funciones.
 - LIVIA es el personaje del R29. Su traje cambia con la paleta y las 4 imágenes van en el mismo marco.
 - El dinero nunca cuenta ni rueda en pantalla. Contraste mínimo 4.5:1.
 
