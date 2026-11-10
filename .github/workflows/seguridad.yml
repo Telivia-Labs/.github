@@ -7,6 +7,11 @@ name: seguridad
 
 on:
   workflow_call:
+    inputs:
+      solo_secretos:
+        description: "true = solo secretos (PR); dependencias y flujos quedan para las rondas"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -36,6 +41,7 @@ jobs:
           ./gitleaks detect --source . --log-opts="$BASE..$CABEZA" --redact --no-banner
 
   dependencias:
+    if: ${{ !inputs.solo_secretos }}
     runs-on: ${{ fromJSON(vars.RUNNER || '"ubuntu-latest"') }}
     timeout-minutes: 8
     steps:
@@ -77,6 +83,7 @@ jobs:
           PY
 
   flujos:
+    if: ${{ !inputs.solo_secretos }}
     runs-on: ${{ fromJSON(vars.RUNNER || '"ubuntu-latest"') }}
     timeout-minutes: 5
     steps:
