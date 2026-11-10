@@ -69,8 +69,14 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 - Panel en celular: barra en píldora con LIVIA al centro (su cara en círculo, sin texto) y el «+»
   arriba.
 - **Logos oficiales en SVG**, nunca escritos como texto. Cambian de color con el tema.
-  - Lumens no lleva nada debajo del logo.
-  - Las empresas clientes llevan «Con la tecnología de Telivia».
+- **La marca del panel es Telivia** (orden de Juan, 10 nov 2026), como QuickBooks, Xero o Stripe:
+  - el logo de Telivia va arriba a la izquierda en todo el panel, computadora y celular;
+  - la empresa cliente se ve como ícono cuadrado pequeño y su nombre en el selector de empresa;
+  - el logo del cliente (horizontal) y su color van en lo que reciben sus clientes: facturas, PDF,
+    cotizaciones, correos, recibos, portal y página de pago; abajo, en chiquito, la firma de
+    Telivia (texto por decidir con Juan);
+  - al cliente se le piden dos archivos: logo cuadrado y logo horizontal;
+  - los colores del cliente no cambian el panel: el panel usa las 4 paletas del R29.
   - **LIVIA** (orden de Juan, 10 nov 2026): su logo es el de Telivia sin la T y la E, con las
     mismas formas oficiales. En grande va el logo; el nombre «LIVIA» en texto solo dentro de
     frases y textos pequeños. Familia de marcas: Intelivia, Telivia, Livia y Vía.
