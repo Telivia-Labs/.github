@@ -89,3 +89,19 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   automático lo despierta GitHub por eventos.
 - No instalar revisores ni procesos que consuman créditos sin que Juan lo pida.
 - No instalar bloqueos ni ganchos que Juan no haya pedido.
+
+## 8. Trabajo en paralelo (orden de Juan, 10 nov 2026)
+
+- Una tarjeta = un agente = una rama = una PR. Nunca dos tarjetas en una rama ni PR encadenadas.
+  Si no cabe en una PR de ≤ 400 líneas, la tarjeta se parte; no se trabaja a medias.
+- Cada tarjeta dice qué pantallas y piezas toca y cuáles no. Solo se toca lo escrito.
+- La base tiene un solo dueño a la vez: colores, letras, tamaños y piezas repetidas (botón,
+  tarjeta, barra) se cambian en una sola tarjeta, que se une primero. Las pantallas arrancan
+  después, desde la base nueva.
+- Nadie inventa diseño: todo sale del prototipo aprobado y de los valores oficiales guardados.
+  Si un valor no está ahí, no se crea en la pantalla.
+- Todos parten de main actualizado. Paquetes chicos que se unen el mismo día.
+- Se une de uno en uno por la cola de unión: cada PR se vuelve a probar junto con main y con las
+  que van delante. Si no encaja, sale de la fila sin frenar a las demás.
+- Pocas tarjetas abiertas a la vez: terminar vale más que empezar.
+- La foto manda al final: cada pantalla se compara foto contra foto con el prototipo antes de unir.
