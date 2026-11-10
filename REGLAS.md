@@ -31,10 +31,11 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 
 ## 3. GitHub y entregas
 
-- **Lo que se puede hacer sin PR se hace directo**: documentos, planes, tableros, tareas, ajustes.
-  Es mucho más rápido. La única espera es si la cola de unión del repo tiene PR esperando: subir
-  directo la vacía, así que se espera a que quede libre.
-- El código va por PR de máximo 400 líneas, que se une solo con las revisiones exigidas en verde.
+- **Sin PR (orden de Juan, 10 nov 2026).** Juan trabaja solo con Cerebro en sesión: el código y
+  todo lo demás se sube directo a main. Antes de cada subida Cerebro corre las pruebas básicas
+  (lint, tipos y lógica); si pasan, sube; si no, arregla y vuelve a probar. Main de telivia-app
+  solo publica el ambiente de prueba. Las reglas de la rama solo impiden borrarla y forzarla.
+- Cambios chicos y de un solo propósito por commit, para poder revertir uno sin tocar los demás.
 - Nunca forzar una subida (`--force`).
 - Firma de git en la configuración de cada copia. El correo de Juan nunca va dentro de comandos.
 
@@ -48,7 +49,8 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 - Cada tarea lleva:
   - título en inglés con Conventional Commits, una sola cosa y sin «y»;
   - qué hacer, carpeta o archivos a tocar, criterios que se puedan comprobar con una prueba,
-    dependencias y tamaño (cabe en una PR de ≤ 400 líneas).
+    dependencias y tamaño.
+- En el rediseño de Lumens ya no se crean tarjetas nuevas: se trabaja en sesión (sección 8).
 - Formularios en este repo (`Telivia/.github`). Las pantallas usan el formulario de pantalla.
 - Límites del código nuevo o tocado: 100 caracteres por línea, 300 por archivo y 50 por función.
 
@@ -90,20 +92,20 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 - No instalar revisores ni procesos que consuman créditos sin que Juan lo pida.
 - No instalar bloqueos ni ganchos que Juan no haya pedido.
 
-## 8. Trabajo en paralelo (orden de Juan, 10 nov 2026)
+## 8. Trabajo en sesión (orden de Juan, 10 nov 2026)
 
-- Una tarjeta = un agente = una rama = una PR. Nunca dos tarjetas en una rama ni PR encadenadas.
-  Si no cabe en una PR de ≤ 400 líneas, la tarjeta se parte; no se trabaja a medias.
-- Cada tarjeta dice qué pantallas y piezas toca y cuáles no. Solo se toca lo escrito.
+- Cerebro coordina desde la sesión: reparte el trabajo entre sus ayudantes, revisa cada entrega
+  contra la ficha y las reglas de diseño, resuelve los choques y sube a main. Sin PR, sin cola
+  de unión y sin tarjetas nuevas en el tablero: la lista de pantallas pendientes la lleva Cerebro.
+- Cada ayudante trabaja en su propia copia y solo toca la pantalla o pieza que le tocó.
 - La base tiene un solo dueño a la vez: colores, letras, tamaños y piezas repetidas (botón,
-  tarjeta, barra) se cambian en una sola tarjeta, que se une primero. Las pantallas arrancan
-  después, desde la base nueva.
+  tarjeta, barra, tabla, formato de dinero) se cambian primero; las pantallas siguen después.
 - Nadie inventa diseño: todo sale del prototipo aprobado y de los valores oficiales guardados.
-  Si un valor no está ahí, no se crea en la pantalla.
-- Todos parten de main actualizado. Paquetes chicos que se unen el mismo día.
-- Se une de uno en uno por la cola de unión: cada PR se vuelve a probar junto con main y con las
-  que van delante. Si no encaja, sale de la fila sin frenar a las demás.
-- Pocas tarjetas abiertas a la vez: terminar vale más que empezar.
-- Pruebas: en cada PR solo las básicas (forma, secretos, y reglas del código, tipos y pruebas de
-  lógica en 2 a 3 minutos). Las grandes (pantallas, fotos contra el prototipo, estilos) corren
-  solo al final, sobre main; lo que falle se vuelve tarjeta de arreglo. Nada de rondas intermedias.
+  Si un valor no está ahí, no se crea en la pantalla. Lo que hace hoy Lumens se conserva.
+- Antes de escribir, el ayudante lee las skills `telivia-diseno` y `marca-telivia` del repo.
+- Pruebas, y Juan decide cuándo:
+  - básicas (lint, tipos y lógica): siempre, antes de cada subida;
+  - vistazo de pantalla (capturas en las 4 paletas, día y noche, computadora y celular): cuando
+    Juan quiera ver una;
+  - grandes (pantallas completas, estilos y calidad sobre main): cuando Juan lo pida, por
+    ejemplo al terminar cada área.
