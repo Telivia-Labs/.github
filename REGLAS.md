@@ -105,5 +105,5 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   que van delante. Si no encaja, sale de la fila sin frenar a las demás.
 - Pocas tarjetas abiertas a la vez: terminar vale más que empezar.
 - Pruebas: en cada PR solo las básicas (forma, secretos, y reglas del código, tipos y pruebas de
-  lógica en 2 a 3 minutos). Las grandes (pantallas, fotos contra el prototipo, estilos) corren en
-  rondas sobre main cada 10 PR unidas y al final; lo que falle se vuelve tarjeta de arreglo.
+  lógica en 2 a 3 minutos). Las grandes (pantallas, fotos contra el prototipo, estilos) corren
+  solo al final, sobre main; lo que falle se vuelve tarjeta de arreglo. Nada de rondas intermedias.
