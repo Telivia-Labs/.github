@@ -21,7 +21,7 @@ env:
   DO_NOT_TRACK: '1'
 jobs:
   stylelint:
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON(vars.RUNNER || '"ubuntu-latest"') }}
     timeout-minutes: 10
     steps:
       - name: Código del PR
@@ -46,7 +46,7 @@ jobs:
         run: node .telivia/estilos/revisar-estilos.mjs "$BASE" "$NUEVO"
 
   impeccable:
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON(vars.RUNNER || '"ubuntu-latest"') }}
     timeout-minutes: 10
     steps:
       - name: Código del PR

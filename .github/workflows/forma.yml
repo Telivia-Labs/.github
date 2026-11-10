@@ -20,7 +20,7 @@ permissions:
   issues: write
 jobs:
   forma:
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON(vars.RUNNER || '"ubuntu-latest"') }}
     timeout-minutes: 5
     # En la cola de unión no hay PR ni tarea: pasa sin revisar (ya se revisó en el PR) para que la
     # cola no se quede esperando una revisión obligatoria.

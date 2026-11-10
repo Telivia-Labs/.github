@@ -19,7 +19,7 @@ env:
 
 jobs:
   secretos:
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON(vars.RUNNER || '"ubuntu-latest"') }}
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
@@ -36,7 +36,7 @@ jobs:
           ./gitleaks detect --source . --log-opts="$BASE..$CABEZA" --redact --no-banner
 
   dependencias:
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON(vars.RUNNER || '"ubuntu-latest"') }}
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
@@ -77,7 +77,7 @@ jobs:
           PY
 
   flujos:
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON(vars.RUNNER || '"ubuntu-latest"') }}
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
