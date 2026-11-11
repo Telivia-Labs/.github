@@ -62,7 +62,9 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   - Prohibida: coss ui (Origin UI), porque es AGPL.
 - Medidas, espacios, letra y piezas: **shadcn tal cual**. El manual R29 pone solo la marca:
   - las 4 paletas (verde, turquesa, azul y grafito), de día y de noche;
-  - los colores por área, las fuentes (Archivo, Manrope y Space Grotesk), el Dock y LIVIA.
+  - las fuentes (Archivo, Manrope y Space Grotesk), el Dock y LIVIA.
+  - Ya no hay colores por área (orden de Juan, 11 nov 2026): todas las suites usan el color de la
+    paleta que elige el cliente, de día y de noche, también el mapa y los íconos.
 - Toda pantalla se revisa en las 4 paletas, de día y de noche, en computadora y celular.
 - Tarjetas **sin borde fino**: separa la sombra, el aire y la altura.
 - Panel en computadora: sin menú lateral. Dock de 10 áreas abajo, sin crecer al pasar el cursor.
