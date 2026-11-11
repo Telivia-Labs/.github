@@ -108,6 +108,8 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 - Prohibido dentro del producto: n8n, Odoo Enterprise, TEN Framework y WhatsApp no oficial.
 - Herramientas internas que no se reparten pueden ser GPL o AGPL.
 - Telivia no emite e-CF: le manda los datos a MSeller por API.
+- Los precios de los planes de Telivia y de LIVIA van en dólares (US$) (orden de Juan, 11 nov 2026);
+  los montos siguen como «ejemplo» hasta que Juan los fije.
 - Producción de Lumens no se toca sin orden de Juan. Las pruebas usan datos de ejemplo y ambientes
   de prueba.
 - Cero claves en código, chats o registros.
