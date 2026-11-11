@@ -84,6 +84,10 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   de Telivia, con la declaración de impuestos entre sus funciones.
 - LIVIA es el personaje del R29. Su traje cambia con la paleta y las 4 imágenes van en el mismo marco.
 - El dinero nunca cuenta ni rueda en pantalla. Contraste mínimo 4.5:1.
+- Se dice **«Cuentas por cobrar»** y **«Cuentas por pagar»** (orden de Juan, 10 nov 2026); nunca «Por cobrar»
+  ni «Por pagar» solos.
+- Efectos: solo los que responden a algo que hace la persona (juego oficial de
+  `docs/diseno/elecciones-de-juan.md`); nada de adornos de página web (orden de Juan, 10 nov 2026).
 
 ## 6. Licencias y producto
 
