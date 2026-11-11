@@ -88,8 +88,18 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 - El dinero nunca cuenta ni rueda en pantalla. Contraste mínimo 4.5:1.
 - Se dice **«Cuentas por cobrar»** y **«Cuentas por pagar»** (orden de Juan, 10 nov 2026); nunca «Por cobrar»
   ni «Por pagar» solos.
-- Efectos: solo los que responden a algo que hace la persona (juego oficial de
-  `docs/diseno/elecciones-de-juan.md`); nada de adornos de página web (orden de Juan, 10 nov 2026).
+- **Dirección «Vibrante» para todo el panel** (orden de Juan, 11 nov 2026). Se permiten:
+  - fondos de color de la paleta con movimiento suave, que se detienen a los 5 s y quedan quietos
+    con «reducir movimiento»;
+  - LIVIA y su resumen del día en la cabecera de Inicio;
+  - cifras con degradado y celebraciones sobrias (una ráfaga corta).
+  - La tarjeta de arriba de Inicio va en color intenso de la paleta; la tarjeta de adentro, clara.
+    Un solo estilo de tarjeta en todo el panel.
+- Fuera de eso, efectos solo los que responden a algo que hace la persona (juego oficial de
+  `docs/diseno/elecciones-de-juan.md`).
+- Estilo elegido por Juan (11 nov 2026): pestañas con raya que se desliza, tablas con fondo alterno
+  (tipo Stripe), botones con relieve (sombra en vez de borde) y campos con etiqueta flotante y raya
+  de color al enfocar.
 
 ## 6. Licencias y producto
 
