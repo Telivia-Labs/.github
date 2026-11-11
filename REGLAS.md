@@ -86,6 +86,9 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
     frases y textos pequeños. Familia de marcas: Intelivia, Telivia, Livia y Vía.
 - El área Agents se llama **LIVIA**: una sola asistente con funciones, vendida como paquete aparte
   de Telivia, con la declaración de impuestos entre sus funciones.
+- **LIVIA habla en primera persona** (orden de Juan, 11 nov 2026): en su chat, voz y textos le habla
+  directo a la persona («¿En qué te ayudo?»), nunca en tercera («Pregúntale a LIVIA»). Chat vacío:
+  sin frase de relleno; sugerencias de un toque arriba de la caja.
 - LIVIA es el personaje del R29. Su traje cambia con la paleta y las 4 imágenes van en el mismo marco.
 - El dinero nunca cuenta ni rueda en pantalla. Contraste mínimo 4.5:1.
 - Se dice **«Cuentas por cobrar»** y **«Cuentas por pagar»** (orden de Juan, 10 nov 2026); nunca «Por cobrar»
