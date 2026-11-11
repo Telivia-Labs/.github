@@ -113,6 +113,9 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 - Producción de Lumens no se toca sin orden de Juan. Las pruebas usan datos de ejemplo y ambientes
   de prueba.
 - Cero claves en código, chats o registros.
+- LIVIA (orden de Juan, 12 nov 2026): la voz es Adriana en todo. Puede llamar y escribir a clientes y
+  prospectos reales de Lumens con la aprobación del plan de cada tarea (o «Permitir siempre»); siempre
+  dice que es LIVIA, la asistente, nunca una persona; las llamadas se graban y los chats se pueden ver.
 
 ## 7. Gasto
 
