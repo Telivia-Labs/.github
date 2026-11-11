@@ -116,6 +116,8 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 - LIVIA (orden de Juan, 12 nov 2026): la voz es Adriana en todo. Puede llamar y escribir a clientes y
   prospectos reales de Lumens con la aprobación del plan de cada tarea (o «Permitir siempre»); siempre
   dice que es LIVIA, la asistente, nunca una persona; las llamadas se graban y los chats se pueden ver.
+  Planes, resultados y grabaciones se guardan en la base de Lumens con acceso por rol; las grabaciones
+  se borran a los 90 días y la transcripción queda en la ficha del cliente.
 
 ## 7. Gasto
 
