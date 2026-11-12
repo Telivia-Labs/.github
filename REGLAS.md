@@ -136,6 +136,14 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   ahorrar el proceso de Meta con clientes que traen su propio WhatsApp. Su diseño sigue el chat
   estándar de LIVIA, solo con librerías permitidas y al nivel del resto de la plataforma.
 
+- **La ventaja no es el código** (principio de Juan, 12 nov 2026): Telivia, LIVIA, Vía y lo que
+  venga se apoyan en código abierto ya publicado; unir esas piezas no es una ventaja competitiva
+  y a Juan no le importa publicar ese código. La ventaja es el producto que sale de esa base, el
+  mercadeo, los clientes, la forma de vender, la marca y la imagen. Eso nace dentro de la empresa
+  y NO se publica: estrategias, ideas, precios, datos de clientes, textos de venta, guiones de
+  LIVIA y material de marca. Las licencias permitidas de esta sección siguen igual hasta que
+  Juan diga por escrito que cambian.
+
 - **Primero lo que ya existe** (orden de Juan, 12 nov 2026): somos gente de negocio, no una
   fábrica de software. Antes de construir cualquier pieza se busca una plataforma, servicio o
   proyecto de código abierto ya probado que la haga (dentro de las licencias permitidas) y se le
