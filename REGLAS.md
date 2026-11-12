@@ -171,6 +171,11 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   escribe una versión propia. Si el estándar no cabe, se le dice a Juan antes de seguir. Antes de
   culpar a una clave o a un paso de Juan, se prueba primero nuestro código.
 
+- **Mercadeo de LIVIA** (orden de Juan, 12 nov 2026): los topes de gasto en anuncios son por día y
+  por mes, en dólares (US$). Todo cambio en anuncios pide tarjeta de aprobación, también pausar y
+  bajar presupuesto. Cuántos prospectos se contactan por día lo ajusta el administrador en
+  Ajustes; no va fijo en el código.
+
 ## 7. Gasto
 
 - Nada que gaste uso sin trabajo real: sin relojes, vigilantes ni reintentos periódicos. El modo
