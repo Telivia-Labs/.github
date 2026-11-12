@@ -149,6 +149,8 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   y nuestro panel va encima por su API con nuestro diseño. Lumens sigue siendo la fuente de
   clientes, pedidos, formularios de anuncios, planes y LIVIA. Mover a dónde avisa Meta (número o
   página reales) solo con orden de Juan y después de probar con un número o página de prueba.
+  Chatwoot es también el motor de chats de Telivia SaaS: cada empresa cliente con su propia
+  cuenta y sus propios canales, separados de las demás.
 
 - **Estándar antes que invento** (corrección de Juan, 12 nov 2026): en las piezas que hablan con
   Meta, WhatsApp, pagos, e-CF u otro proveedor se usa el patrón o la librería oficial del
