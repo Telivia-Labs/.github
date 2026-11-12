@@ -176,6 +176,26 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   bajar presupuesto. Cuántos prospectos se contactan por día lo ajusta el administrador en
   Ajustes; no va fijo en el código.
 
+- **Telivia SaaS: una base de datos por empresa** (orden de Juan, 12 nov 2026): cada empresa
+  cliente tiene su base separada; nadie ve información de otra. El panel de administración
+  interno de Telivia (el nuestro, no el del cliente) se diseña aparte, con el estándar del
+  mercado, lo más completo posible, y Juan lo aprueba antes de construirlo.
+
+- **LIVIA vendedora de Lumens** (orden de Juan, 12 nov 2026): vende y negocia, no solo cotiza.
+  - La escala de precios va en sus instrucciones, tomada del sistema en cada llamada o chat.
+  - Puede rebajar ella sola UN escalón (el precio del escalón siguiente), solo en pedidos de 5
+    cajas o más, y solo después de ofrecer subir el pedido; insiste hasta 5 veces. Más que eso
+    es una oferta que pasa a la oficina, que llama en 24 horas. Esos números los cambia el
+    administrador; el sistema valida cada rebaja.
+  - No transfiere llamadas: toma el recado y una persona devuelve la llamada. Dice «watts».
+  - Entrega 24 horas después del pedido, sin hora de corte y agendable; pago al recibir, en
+    efectivo o transferencia; oficina de lunes a viernes de 8 a 6.
+
+- **Vía** (orden de Juan, 11 y 12 nov 2026): asistente personal con personaje propio; llama y
+  escribe a nombre de la persona. La prueba con familia y amigos es el producto completo, por
+  TestFlight. Logo «VÍA» con las formas oficiales de Telivia; ícono de la app con la V. Idea de
+  precio: US$19.99 al mes más paquetes de minutos (montos «ejemplo» hasta que Juan los fije).
+
 ## 7. Gasto
 
 - Nada que gaste uso sin trabajo real: sin relojes, vigilantes ni reintentos periódicos. El modo
