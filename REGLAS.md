@@ -136,6 +136,13 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   ahorrar el proceso de Meta con clientes que traen su propio WhatsApp. Su diseño sigue el chat
   estándar de LIVIA, solo con librerías permitidas y al nivel del resto de la plataforma.
 
+- **Primero lo que ya existe** (orden de Juan, 12 nov 2026): somos gente de negocio, no una
+  fábrica de software. Antes de construir cualquier pieza se busca una plataforma, servicio o
+  proyecto de código abierto ya probado que la haga (dentro de las licencias permitidas) y se le
+  presenta a Juan con su costo. Solo se desarrolla la unión entre piezas y lo que nos diferencia
+  (diseño, LIVIA, reglas del negocio). Construir desde cero es la última opción y se le avisa a
+  Juan antes. Vale para todos los canales, no solo Meta: correo, Telegram, SMS y los demás.
+
 - **Motor de chats: Chatwoot Community** (orden de Juan, 12 nov 2026; cambia lo del Laboratorio
   «todo nuestro»): se instala Chatwoot de código abierto (MIT, sin la carpeta `enterprise/`) en
   nuestro servidor como motor probado para recibir y enviar chats (WhatsApp, Messenger, Instagram),
