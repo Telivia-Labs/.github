@@ -124,6 +124,13 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   Planes, resultados y grabaciones se guardan en la base de Lumens con acceso por rol; las grabaciones
   se borran a los 90 días y la transcripción queda en la ficha del cliente.
 
+- Canales (orden de Juan, 12 nov 2026): Bombi (LIVIA) atiende solo WhatsApp y trabaja en modo
+  automático (el modo sugerencia queda como opción en Ajustes). Las redes (Facebook, Instagram y
+  Messenger) las maneja LIVIA. El Laboratorio de Bombi se construye nuestro, sin pagar un motor de
+  terceros (Chatwoot, Kapso, Twilio ni Zendesk); un tercero solo se considera para Telivia, para
+  ahorrar el proceso de Meta con clientes que traen su propio WhatsApp. Su diseño sigue el chat
+  estándar de LIVIA, solo con librerías permitidas y al nivel del resto de la plataforma.
+
 ## 7. Gasto
 
 - Nada que gaste uso sin trabajo real: sin relojes, vigilantes ni reintentos periódicos. El modo
