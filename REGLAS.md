@@ -136,6 +136,13 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   ahorrar el proceso de Meta con clientes que traen su propio WhatsApp. Su diseño sigue el chat
   estándar de LIVIA, solo con librerías permitidas y al nivel del resto de la plataforma.
 
+- **Motor de chats: Chatwoot Community** (orden de Juan, 12 nov 2026; cambia lo del Laboratorio
+  «todo nuestro»): se instala Chatwoot de código abierto (MIT, sin la carpeta `enterprise/`) en
+  nuestro servidor como motor probado para recibir y enviar chats (WhatsApp, Messenger, Instagram),
+  y nuestro panel va encima por su API con nuestro diseño. Lumens sigue siendo la fuente de
+  clientes, pedidos, formularios de anuncios, planes y LIVIA. Mover a dónde avisa Meta (número o
+  página reales) solo con orden de Juan y después de probar con un número o página de prueba.
+
 - **Estándar antes que invento** (corrección de Juan, 12 nov 2026): en las piezas que hablan con
   Meta, WhatsApp, pagos, e-CF u otro proveedor se usa el patrón o la librería oficial del
   proveedor (por ejemplo, comprobar la firma de un aviso sobre el cuerpo exacto que llegó). No se
