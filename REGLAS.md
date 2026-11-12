@@ -124,6 +124,11 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   Planes, resultados y grabaciones se guardan en la base de Lumens con acceso por rol; las grabaciones
   se borran a los 90 días y la transcripción queda en la ficha del cliente.
 
+- Planes de LIVIA en segundo plano (orden de Juan, 12 nov 2026): cada plan aprobado corre como
+  trabajo propio en el servidor, con Trigger.dev (el que ya tenemos instalado), y LIVIA puede
+  lanzar varios. Topes: 3 planes a la vez y 20 mensajes por hora entre todos. Sin aprobación del
+  plan no sale ningún mensaje. La verdad (planes, avance, resultados) vive en la base de Lumens.
+
 - Canales (orden de Juan, 12 nov 2026): Bombi (LIVIA) atiende solo WhatsApp y trabaja en modo
   automático (el modo sugerencia queda como opción en Ajustes). Las redes (Facebook, Instagram y
   Messenger) las maneja LIVIA. El Laboratorio de Bombi se construye nuestro, sin pagar un motor de
