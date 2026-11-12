@@ -16,7 +16,8 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   - pagar (se le prepara todo con el total);
   - privacidad (hacer público algo, datos de clientes);
   - precios, textos legales, topes y plazos de negocio.
-- Lo legal (licencias y DGII) ya está confirmado con el abogado. No se vuelve a plantear.
+- Lo legal (licencias y DGII) lo decide Juan: el abogado es él. No se le menciona «el abogado»
+  ni se le manda a consultar a otro; si hay una duda legal, se le explica y él decide.
 - Si Juan tiene que hacer algo a mano, primero se busca otra forma de hacerlo sin él.
 
 ## 2. Antes de afirmar algo
@@ -108,8 +109,13 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 
 ## 6. Licencias y producto
 
-- Dentro del producto: MIT, Apache, BSD o LGPL.
-  - AGPL solo como servicio aparte sin modificar, o en módulos de Odoo publicados con AGPL.
+- Dentro del producto: MIT, Apache, BSD, LGPL y también **GPL y AGPL** (orden de Juan, 12 nov
+  2026: acepta publicar el código nuestro que se mezcle con esas piezas).
+  - Cuando se use una pieza GPL o AGPL dentro del producto, el código nuestro mezclado con ella
+    se publica en un repositorio público con su licencia y un enlace «Código fuente» en la app.
+  - Nunca se publican datos, claves, marca, precios, textos de venta, guiones ni estrategias.
+  - Sigue fuera lo que no es código abierto de verdad (licencias «fair-code» o de solo uso
+    interno), como n8n dentro del producto.
 - Prohibido dentro del producto: n8n, Odoo Enterprise, TEN Framework y WhatsApp no oficial.
 - Herramientas internas que no se reparten pueden ser GPL o AGPL.
 - Telivia no emite e-CF: le manda los datos a MSeller por API.
@@ -141,8 +147,7 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   y a Juan no le importa publicar ese código. La ventaja es el producto que sale de esa base, el
   mercadeo, los clientes, la forma de vender, la marca y la imagen. Eso nace dentro de la empresa
   y NO se publica: estrategias, ideas, precios, datos de clientes, textos de venta, guiones de
-  LIVIA y material de marca. Las licencias permitidas de esta sección siguen igual hasta que
-  Juan diga por escrito que cambian.
+  LIVIA y material de marca.
 
 - **Primero lo que ya existe** (orden de Juan, 12 nov 2026): somos gente de negocio, no una
   fábrica de software. Antes de construir cualquier pieza se busca una plataforma, servicio o
