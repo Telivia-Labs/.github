@@ -196,6 +196,17 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   TestFlight. Logo «VÍA» con las formas oficiales de Telivia; ícono de la app con la V. Idea de
   precio: US$19.99 al mes más paquetes de minutos (montos «ejemplo» hasta que Juan los fije).
 
+- **Densidad compacta en todo el panel** (orden de Juan, 12 nov 2026): le gusta el estilo
+  «compacto» y no quiere espacios vacíos. En una sola pantalla se debe poder hacer mucho, como en
+  Claude, ChatGPT o Respond.io: varias columnas, lista y detalle lado a lado, tarjetas bajas con
+  3 o más datos útiles, más filas por pantalla y las bandejas con varios chats a la vez. Esto
+  manda sobre las alturas y espacios amplios de la skill `telivia-diseno` (botón 44, campo 48,
+  tarjeta con 20 de interior): se redefinen en la base y las pantallas las siguen después.
+  El dinamismo es sobrio: texto que fluye, pasos que aparecen, estados vivos, y nada de
+  animaciones de adorno. Se aplica pantalla por pantalla con prototipo aprobado por Juan.
+- **El Hilo de LIVIA va al estilo de Claude** (orden de Juan, 12 nov 2026): una lista plegable de
+  planes con sus pasos en vivo, sin tarjetas ni barras de avance; mismos colores de la paleta.
+
 ## 7. Gasto
 
 - Nada que gaste uso sin trabajo real: sin relojes, vigilantes ni reintentos periódicos. El modo
