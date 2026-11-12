@@ -207,6 +207,19 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 - **El Hilo de LIVIA va al estilo de Claude** (orden de Juan, 12 nov 2026): una lista plegable de
   planes con sus pasos en vivo, sin tarjetas ni barras de avance; mismos colores de la paleta.
 
+- **Regla de espacios y mezcla de tarjetas** (orden de Juan, 12 nov 2026): una pantalla no se
+  arma con 4, 5 o 6 tarjetas del mismo tamaño que parecen un cuadro. Se mezclan tarjetas de
+  distintos tamaños (anchas, altas, chicas) con el contenido adentro, para dar ritmo.
+  - Ninguna zona de la pantalla se ve vacía: dentro de una tarjeta, el espacio sin contenido no
+    pasa de 16 px en cada lado, y una tarjeta no es más grande de lo que su contenido pide.
+  - Cada tarjeta lleva su contenido a lo ancho y a lo alto (gráfica, lista o tabla que llena el
+    espacio), no un dato suelto en una esquina.
+  - La rejilla es de tamaños mixtos (por ejemplo 1, 2 y 3 columnas de ancho y 1 o 2 filas de
+    alto) y se acomoda sin huecos: si queda un hueco, se llena con otra tarjeta o se ajusta
+    el tamaño de las vecinas.
+  - Cada pantalla se revisa con la medida de espacio vacío (porcentaje de área sin contenido) y
+    con captura en 1280 y 1440 antes de aprobarla.
+
 ## 7. Gasto
 
 - Nada que gaste uso sin trabajo real: sin relojes, vigilantes ni reintentos periódicos. El modo
