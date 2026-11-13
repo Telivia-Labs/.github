@@ -39,6 +39,14 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   las pruebas básicas (lint, tipos y lógica). Esto incluye los cambios chicos, los arreglos urgentes y
   los agentes de ElevenLabs (se prueban en una copia antes de tocar el real). Si algo ya publicado falla,
   se devuelve a la versión anterior sin esperar y se le avisa a Juan.
+- **Dónde está el entorno de prueba** (13 nov 2026, tras un arreglo que llegó sin probarse en la nube):
+  - **lumens-web:** rama `pruebas` → `pruebas.lumensdominicana.com`. Ya existe.
+  - **telivia-app:** rama `pruebas` → el proyecto de Vercel `lumens-panel`, que ya apunta al backend de
+    pruebas. Pendiente de Juan: ponerla como rama de producción de ese proyecto (un cambio en Vercel).
+  - **Nunca** se construye una vista previa de `lumens-sistema` fuera de `produccion`: ese proyecto
+    apunta a los datos reales de Lumens.
+  - **Orden:** `pruebas` → Cerebro la prueba en la nube y le dice a Juan qué vio y qué no pudo ver →
+    Juan autoriza → `main` / `produccion`. Probar en local no sustituye este paso.
 - Cambios chicos y de un solo propósito por commit, para poder revertir uno sin tocar los demás.
 - Nunca forzar una subida (`--force`).
 - Firma de git en la configuración de cada copia. El correo de Juan nunca va dentro de comandos.
