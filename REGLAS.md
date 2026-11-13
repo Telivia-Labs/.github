@@ -115,9 +115,10 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   - Un solo color de marca: **grafito**, con modo día y modo noche. Ya no hay 4 paletas ni color
     elegible. La noche tiene capas y profundidad: ni plana ni negra pura (niveles de superficie
     del manual de diseño).
-  - Sin barra superior y **sin personaje**. **LIVIA desaparece**: el software y su asistente se
-    llaman **Telivia**; la asistente no tiene cara (su imagen es el halo de voz). Donde estas
-    reglas dicen «LIVIA», leer «Telivia». Vía sigue siendo un producto aparte.
+  - Sin barra superior y **sin personaje** (sin cara ni traje). El software se llama **Telivia**
+    y la asistente sigue llamándose **LIVIA** (orden de Juan, 13 nov 2026: «tiene nombre de mujer
+    y voz y pega»): conserva su nombre y su voz Adriana, y su imagen es el halo de voz. Las
+    llamadas siguen presentándose como LIVIA. Vía sigue siendo un producto aparte.
   - El diseño neutro del prototipo «Tres direcciones» (dirección A, Geist) le gusta a Juan y se
     sigue mejorando en esa dirección, con los efectos de Claude en la bandeja y el chat (texto
     que fluye, pasos en vivo en lista, estados vivos), sin adornos. Por confirmar con Juan:
