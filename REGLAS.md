@@ -151,6 +151,14 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
     `docs/diseno/DESIGN.md`, los tokens en `src/styles/v2/` y las piezas en `src/components/v2/`.
     Toda pieza nueva se agrega primero ahí (por ejemplo el feed en vivo y la vista de workflows), y
     los proyectos copian de ahí; no se inventan piezas sueltas por pantalla.
+  - **Decisiones de diseño confirmadas por Juan el 13 nov 2026** (fuente: `docs/redisenio/DECISIONES.md` en
+    telivia-app, rama `diseno/v2`): noche «Grafito medio» (#141417); esquinas suaves (8/12/16 px); navegación
+    de barra lateral con todas las pestañas a la vista e íconos Lucide; editor de documento de dos paneles,
+    ficha larga en secciones y diálogos en hoja lateral; detalle en panel lateral (cliente en ficha 360);
+    documento minimal y correo con botón; portal de marca fuerte; entrada en dos mitades; móvil con resumen y
+    hoja inferior; reportes «una pregunta por tarjeta»; vistas especiales híbridas; estados con guía de LIVIA y
+    paleta con ámbitos; isotipo H con la firma «Powered by Telivia» (pequeña en letra; mediana o grande con el
+    logo si se ve bien) salvo en documentos formales. La vuelta atrás del rediseño es el rollback de Vercel.
   - La línea se aplica también a la web de Telivia y al súper-admin. Habrá un manual de diseño
     único en el repo (`DESIGN.md` y su versión viva en Storybook).
 
