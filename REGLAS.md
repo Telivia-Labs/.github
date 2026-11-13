@@ -114,6 +114,19 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   (tipo Stripe), botones con relieve (sombra en vez de borde) y campos con etiqueta flotante y raya
   de color al enfocar.
 
+- **Método de trabajo: primero se muestra y se elige, después se construye** (orden de Juan, 13 nov 2026,
+  «para que nunca se te olvide»; evita el trabajo doble). Para toda decisión de diseño, de producto o
+  de marca que todavía no está cerrada:
+  1. Se prepara una página publicada (enlace privado) con **2 o 3 opciones lado a lado**, con datos de
+     ejemplo reales, día y noche, escritorio y celular, y una **recomendación ★ con su razón en una línea**.
+  2. Se le manda a Juan **todo junto**: una hoja con los enlaces, la recomendación de cada tema y lo que
+     falta por decidir. Juan elige una sola vez («todo lo recomendado» y solo nombra lo que cambia).
+  3. Lo elegido se escribe el mismo día en el manual (`DESIGN.md`), los tokens y la guía de los agentes.
+  4. **Solo entonces se implementa en el código real**, y siempre en una rama o entorno de prueba.
+  Antes de pedirle algo a Juan, se revisan sus artifacts y archivos anteriores (ya hizo prototipos de
+  casi todo). Las opciones deben ser distintas entre sí, no microajustes. Cada página se revisa con
+  captura antes de enviarla y se comprueba que abra (raíz correcta, sin pantalla negra).
+
 - **Nueva línea gráfica: grafito y un solo producto, Telivia** (órdenes de Juan, 13 nov 2026; reemplazan lo
   anterior donde choquen):
   - Un solo color de marca: **grafito**, con modo día y modo noche. Ya no hay 4 paletas ni color
