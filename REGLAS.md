@@ -129,6 +129,11 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   - Posicionamiento en evaluación: «The AI system to manage your business» como mensaje de
     arriba, con las funciones concretas justo debajo y «tú apruebas»; sin prometer autonomía
     total ni cumplimiento automático de la DGII.
+  - **El «manual vivo» es el modelo de diseño de todos nuestros proyectos** (Telivia, súper-admin,
+    web, Vía y lo que venga), orden de Juan, 13 nov 2026. Vive en `telivia-app`, rama `diseno/v2`:
+    `docs/diseno/DESIGN.md`, los tokens en `src/styles/v2/` y las piezas en `src/components/v2/`.
+    Toda pieza nueva se agrega primero ahí (por ejemplo el feed en vivo y la vista de workflows), y
+    los proyectos copian de ahí; no se inventan piezas sueltas por pantalla.
   - La línea se aplica también a la web de Telivia y al súper-admin. Habrá un manual de diseño
     único en el repo (`DESIGN.md` y su versión viva en Storybook).
 
