@@ -110,6 +110,27 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   (tipo Stripe), botones con relieve (sombra en vez de borde) y campos con etiqueta flotante y raya
   de color al enfocar.
 
+- **Nueva línea gráfica: grafito y un solo producto, Telivia** (órdenes de Juan, 13 nov 2026; reemplazan lo
+  anterior donde choquen):
+  - Un solo color de marca: **grafito**, con modo día y modo noche. Ya no hay 4 paletas ni color
+    elegible. La noche tiene capas y profundidad: ni plana ni negra pura (niveles de superficie
+    del manual de diseño).
+  - Sin barra superior y **sin personaje**. **LIVIA desaparece**: el software y su asistente se
+    llaman **Telivia**; la asistente no tiene cara (su imagen es el halo de voz). Donde estas
+    reglas dicen «LIVIA», leer «Telivia». Vía sigue siendo un producto aparte.
+  - El diseño neutro del prototipo «Tres direcciones» (dirección A, Geist) le gusta a Juan y se
+    sigue mejorando en esa dirección, con los efectos de Claude en la bandeja y el chat (texto
+    que fluye, pasos en vivo en lista, estados vivos), sin adornos. Por confirmar con Juan:
+    barra lateral con etiquetas en lugar del Dock.
+  - Dos modos a nivel de toda la plataforma: **normal** y **voz** (conversación con halo en
+    pantalla grande; las acciones salen como tarjeta de plan con confirmación). Nombres por
+    decidir (propuesta: Panel / Conversar). El modo voz es el diferenciador.
+  - Posicionamiento en evaluación: «The AI system to manage your business» como mensaje de
+    arriba, con las funciones concretas justo debajo y «tú apruebas»; sin prometer autonomía
+    total ni cumplimiento automático de la DGII.
+  - La línea se aplica también a la web de Telivia y al súper-admin. Habrá un manual de diseño
+    único en el repo (`DESIGN.md` y su versión viva en Storybook).
+
 ## 6. Licencias y producto
 
 - Dentro del producto: MIT, Apache, BSD, LGPL y también **GPL y AGPL** (orden de Juan, 12 nov
