@@ -301,6 +301,14 @@ Workflow. Programar sin buscar antes fuera rompe esta regla y cuesta dinero y cr
   Si una pregunta no cabe en una lectura fija, no responde «no sé»: busca en todo lo que se puede leer.
   Si una respuesta ya está en lo que leyó, la dice, sin seguir buscando otra cosa.
 
+- **Odoo: camino «A con C»** (orden de Juan, 13 nov 2026): el motor es el sistema de Lumens, limpiado y
+  compactado; Odoo es referencia. Se compara módulo por módulo y solo se trae de Odoo (LGPL-3: datos o
+  lógica portada) lo que haga falta. No se sigue construyendo la conexión con Odoo. Nada de Odoo en
+  producción sin orden de Juan.
+- **El modo conversacional a pantalla completa se llama «Copilot»**, igual en español e inglés (orden de
+  Juan, 13 nov 2026; antes «Despacho»). Riesgo anotado: choque con Microsoft/GitHub Copilot, marca por
+  confirmar. Es proyecto aparte: primero prototipo completo para que Juan lo apruebe.
+
 ## 7. Gasto
 
 - Nada que gaste uso sin trabajo real: sin relojes, vigilantes ni reintentos periódicos. El modo
