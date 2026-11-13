@@ -301,10 +301,15 @@ Workflow. Programar sin buscar antes fuera rompe esta regla y cuesta dinero y cr
   Si una pregunta no cabe en una lectura fija, no responde «no sé»: busca en todo lo que se puede leer.
   Si una respuesta ya está en lo que leyó, la dice, sin seguir buscando otra cosa.
 
-- **Odoo: camino «A con C»** (orden de Juan, 13 nov 2026): el motor es el sistema de Lumens, limpiado y
-  compactado; Odoo es referencia. Se compara módulo por módulo y solo se trae de Odoo (LGPL-3: datos o
-  lógica portada) lo que haga falta. No se sigue construyendo la conexión con Odoo. Nada de Odoo en
-  producción sin orden de Juan.
+- **Rumbo del producto: Lumens primero, sin Odoo** (orden de Juan, 13 nov 2026; reemplaza «A con C»):
+  - Odoo queda fuera del producto: no se sigue construyendo su conexión; lo hecho es referencia, y el
+    Odoo de producción sigue apagado. Se ofrece **contabilidad ligera** hecha en Lumens (606, 607, 608,
+    IT-1, retenciones, ITBIS de compras, estado de resultados simple y exportación para el contador);
+    la contabilidad completa (partida doble) queda para después, con Odoo u otra pieza, si un cliente la pide.
+  - **LIVIA es un producto aparte**, vendido como módulo de Telivia SaaS.
+  - Orden: (1) limpiar y organizar el servidor y los repos bajo nuestros estándares; (2) probar Lumens con
+    el diseño nuevo de 30 a 60 días y pulirlo; (3) convertirlo en SaaS; (4) lanzar a vender solo cuando
+    esté al más alto nivel. Borrar algo de la limpieza se le pregunta a Juan antes.
 - **El modo conversacional a pantalla completa se llama «Copilot»**, igual en español e inglés (orden de
   Juan, 13 nov 2026; antes «Despacho»). Riesgo anotado: choque con Microsoft/GitHub Copilot, marca por
   confirmar. Es proyecto aparte: primero prototipo completo para que Juan lo apruebe.
