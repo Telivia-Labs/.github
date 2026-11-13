@@ -296,6 +296,17 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 - No instalar revisores ni procesos que consuman créditos sin que Juan lo pida.
 - No instalar bloqueos ni ganchos que Juan no haya pedido.
 
+## 8b. Varias cosas a la vez: plan escrito y flujo de trabajo (orden de Juan, 13 nov 2026)
+
+- Cuando hay **más de una cosa que hacer**, primero se escribe un **plan** (fases, qué depende de qué, qué
+  corre en paralelo, quién decide qué) y se le muestra a Juan; después se corre con un **flujo de trabajo
+  (Workflow)**, no con agentes sueltos. Se avisa antes del tamaño y del gasto aproximado.
+- Un agente suelto solo vale para una consulta o una pieza chica y aislada.
+- Lo que depende de algo (integrar, probar en la nube) va en secuencia dentro del plan; lo independiente va
+  en paralelo, con tope de compilaciones a la vez para no saturar el servidor (cada compilación de Next
+  usa unos 6 GB).
+- Al terminar cada fase se revisa contra el plan y se le dice a Juan qué quedó, qué no y qué falta.
+
 ## 8. Trabajo en sesión (orden de Juan, 10 nov 2026)
 
 - Cerebro coordina desde la sesión: reparte el trabajo entre sus ayudantes, revisa cada entrega
