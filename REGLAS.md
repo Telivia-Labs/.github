@@ -60,19 +60,23 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 
 ## 5. Diseño
 
+> **Atención (13 nov 2026):** donde esta sección 5 choque con el bloque «Nueva línea gráfica» (más abajo),
+> con `EFECTOS.md` o con el manual vivo `DESIGN.md` (telivia-app, rama `diseno/v2`), mandan esos tres.
+> Las líneas ya reemplazadas llevan la marca [REEMPLAZADO].
+
 - **Todo sale de librería.** Nada dibujado a mano.
   - Permitidas: shadcn, Magic UI, Kibo UI, Aceternity UI, Animate UI, React Bits, Cult UI,
     Motion Primitives, AI Elements y assistant-ui.
   - Prohibida: coss ui (Origin UI), porque es AGPL.
-- Medidas, espacios, letra y piezas: **shadcn tal cual**. El manual R29 pone solo la marca:
+- [REEMPLAZADO el 13 nov 2026 por el bloque «Nueva línea gráfica» y el manual vivo `DESIGN.md`] Medidas, espacios, letra y piezas: **shadcn tal cual**. El manual R29 pone solo la marca:
   - las 4 paletas (verde, turquesa, azul y grafito), de día y de noche;
   - las fuentes (Archivo, Manrope y Space Grotesk), el Dock y LIVIA.
   - Ya no hay colores por área (orden de Juan, 11 nov 2026): todas las suites usan el color de la
     paleta que elige el cliente, de día y de noche, también el mapa y los íconos.
-- Toda pantalla se revisa en las 4 paletas, de día y de noche, en computadora y celular.
+- Toda pantalla se revisa en grafito, de día y de noche, en computadora (1280, 1440 y pantallas grandes) y celular. [Antes: 4 paletas]
 - Tarjetas **sin borde fino**: separa la sombra, el aire y la altura.
-- Panel en computadora: sin menú lateral. Dock de 10 áreas abajo, sin crecer al pasar el cursor.
-- Panel en celular: barra en píldora con LIVIA al centro (su cara en círculo, sin texto) y el «+»
+- [REEMPLAZADO 13 nov 2026] Panel en computadora: barra lateral con etiquetas, colapsable, sin barra superior y sin Dock (por confirmar con Juan; antes: Dock de 10 áreas abajo).
+- [AJUSTADO 13 nov 2026: LIVIA sin cara; su imagen es el halo] Panel en celular: barra en píldora con LIVIA al centro y el «+»
   arriba.
 - **Logos oficiales en SVG**, nunca escritos como texto. Cambian de color con el tema.
 - **La marca del panel es Telivia** (orden de Juan, 10 nov 2026), como QuickBooks, Xero o Stripe:
@@ -93,11 +97,11 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 - **LIVIA habla en primera persona** (orden de Juan, 11 nov 2026): en su chat, voz y textos le habla
   directo a la persona («¿En qué te ayudo?»), nunca en tercera («Pregúntale a LIVIA»). Chat vacío:
   sin frase de relleno; sugerencias de un toque arriba de la caja.
-- LIVIA es el personaje del R29. Su traje cambia con la paleta y las 4 imágenes van en el mismo marco.
+- [REEMPLAZADO 13 nov 2026: sin personaje, sin traje; LIVIA es nombre, voz y halo] LIVIA era el personaje del R29.
 - El dinero nunca cuenta ni rueda en pantalla. Contraste mínimo 4.5:1.
 - Se dice **«Cuentas por cobrar»** y **«Cuentas por pagar»** (orden de Juan, 10 nov 2026); nunca «Por cobrar»
   ni «Por pagar» solos.
-- **Dirección «Vibrante» para todo el panel** (orden de Juan, 11 nov 2026). Se permiten:
+- [REEMPLAZADO 13 nov 2026 por la línea grafito sobria; los efectos válidos son los de `EFECTOS.md`] **Dirección «Vibrante» para todo el panel** (orden de Juan, 11 nov 2026). Se permitían:
   - fondos de color de la paleta con movimiento suave, que se detienen a los 5 s y quedan quietos
     con «reducir movimiento»;
   - LIVIA y su resumen del día en la cabecera de Inicio;
@@ -106,7 +110,7 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
     Un solo estilo de tarjeta en todo el panel.
 - Fuera de eso, efectos solo los que responden a algo que hace la persona (juego oficial de
   `docs/diseno/elecciones-de-juan.md`).
-- Estilo elegido por Juan (11 nov 2026): pestañas con raya que se desliza, tablas con fondo alterno
+- [VIGENTE salvo los botones con relieve, reemplazados por el manual v1.2] Estilo elegido por Juan (11 nov 2026): pestañas con raya que se desliza, tablas con fondo alterno
   (tipo Stripe), botones con relieve (sombra en vez de borde) y campos con etiqueta flotante y raya
   de color al enfocar.
 
