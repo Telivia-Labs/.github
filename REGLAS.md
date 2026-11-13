@@ -4,6 +4,18 @@ Fuente única de las reglas de trabajo de Telivia, Lumens y LIVIA. Se lee **ante
 Si choca con otro documento, manda esta, salvo una orden escrita de Juan más nueva. Cuando Juan da
 una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a que lo pida.
 
+## 0b. Antes de construir cualquier función: propuesta técnica (orden de Juan, 13 nov 2026)
+
+Cuando Juan pide una función nueva, **no se programa nada** hasta que él apruebe una propuesta con:
+1. **Qué ya existe fuera:** se busca primero un servicio pagado o un proyecto de código abierto que lo
+   haga (licencias permitidas), con su costo, licencia y peso. Lo no leído ese día queda «por confirmar».
+2. **Cómo lo hacen los grandes** (Claude, ChatGPT, Stripe, Respond.io, Odoo, etc.), en pocas líneas.
+3. **Cómo la haría yo, paso a paso**, con una sola pieza genérica en vez de una por cada caso
+   (ejemplo: un solo adaptador a Odoo, no uno por acción), y qué es lo único que se escribe nuestro.
+4. **Recomendación ★** con su razón, tiempo y gasto aproximado.
+Orden: propuesta → Juan aprueba → lista de arreglos → Juan confirma → plan escrito → Juan aprueba →
+Workflow. Programar sin buscar antes fuera rompe esta regla y cuesta dinero y créditos.
+
 ## 1. Cómo hablarle a Juan
 
 - Todo lo que Juan lee va en **español sencillo**: mensajes, resúmenes y textos de tareas. Código y
