@@ -220,6 +220,12 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
   - Cada pantalla se revisa con la medida de espacio vacío (porcentaje de área sin contenido) y
     con captura en 1280 y 1440 antes de aprobarla.
 
+- **LIVIA tiene acceso a todo el panel** (orden de Juan, 12 nov 2026): es su mano derecha y su asistente.
+  Debe poder leer toda la información del sistema (ventas por mes y por cliente, cuentas por cobrar y
+  atrasadas, pedidos, facturas, inventario, gastos y más), igual que Cerebro, con el rol de quien le habla.
+  Si una pregunta no cabe en una lectura fija, no responde «no sé»: busca en todo lo que se puede leer.
+  Si una respuesta ya está en lo que leyó, la dice, sin seguir buscando otra cosa.
+
 ## 7. Gasto
 
 - Nada que gaste uso sin trabajo real: sin relojes, vigilantes ni reintentos periódicos. El modo
