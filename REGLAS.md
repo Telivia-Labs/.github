@@ -32,10 +32,13 @@ una regla nueva o corrige algo, se escribe aquí el mismo día, sin esperar a qu
 
 ## 3. GitHub y entregas
 
-- **Sin PR (orden de Juan, 10 nov 2026).** Juan trabaja solo con Cerebro en sesión: el código y
-  todo lo demás se sube directo a main. Antes de cada subida Cerebro corre las pruebas básicas
-  (lint, tipos y lógica); si pasan, sube; si no, arregla y vuelve a probar. Main de telivia-app
-  solo publica el ambiente de prueba. Las reglas de la rama solo impiden borrarla y forzarla.
+- **Nada directo a la rama principal sin autorización de Juan** (orden de Juan, 12 nov 2026; reemplaza
+  la regla «sin PR» del 10 nov). Todo cambio se sube primero al **entorno de prueba** (telivia-app y
+  lumens-web), se prueba ahí de verdad (pantallas, llamadas y datos) y solo después de que Juan lo
+  autorice se sube a la principal (`main` / `produccion` / `lumens-main`). Antes de cada subida se corren
+  las pruebas básicas (lint, tipos y lógica). Esto incluye los cambios chicos, los arreglos urgentes y
+  los agentes de ElevenLabs (se prueban en una copia antes de tocar el real). Si algo ya publicado falla,
+  se devuelve a la versión anterior sin esperar y se le avisa a Juan.
 - Cambios chicos y de un solo propósito por commit, para poder revertir uno sin tocar los demás.
 - Nunca forzar una subida (`--force`).
 - Firma de git en la configuración de cada copia. El correo de Juan nunca va dentro de comandos.
