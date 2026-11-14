@@ -88,6 +88,18 @@ Lo que Juan ya decidió sobre **qué** se construye y **cómo se ve**. Se lee si
 - Los precios de los planes de Telivia y LIVIA van en **US$**; los montos son «ejemplo» hasta que Juan los fije.
 
 ## 6. LIVIA
+- **Todo lo que necesita aprobación sale como tarjeta en el hilo, siempre** (orden de Juan, 14 nov 2026; regla
+  general, no por herramienta): en el chat y en la voz, por una sola vía común para todas las herramientas
+  (cotizar, pedir, facturar, cobrar, contactar, anuncios y las que vengan). LIVIA **nunca** aprueba ni ofrece
+  aprobar por voz: se aprueba tocando la tarjeta. Una prueba recorre todas las herramientas que dejan algo por
+  aprobar y falla si alguna no devuelve su tarjeta.
+- **El hilo muestra cómo se desenvuelve el trabajo, igual que Claude:** pasos de herramientas en vivo (plegables),
+  estados vivos, tarjetas en su orden; mismo flujo, rendimiento y look and feel que Claude. Con librerías
+  permitidas (AI Elements, assistant-ui).
+- **Orbe de la voz:** va centrado en el área de la conversación, no junto con el texto (la transcripción cambia de
+  ancho y de alto). Si se abre el hilo, el área se achica y el orbe se centra en ella. El texto y la tarjeta van en
+  su propio espacio y no mueven ni encogen el orbe. El Orb de ElevenLabs no se modifica: se usa como en sus
+  ejemplos oficiales (estado y volúmenes del SDK), para que se vea con la misma calidad que en ElevenLabs.
 - **Voz:** Adriana en todo. Modelo de la voz: **Haiku 5.5** (13 nov 2026).
 - **Acceso a todo el panel** (12 nov 2026), con el rol de quien le habla: si una pregunta no cabe en una lectura
   fija, busca en todo lo que se puede leer; si la respuesta ya está en lo leído, la dice.
@@ -123,3 +135,11 @@ Lo que Juan ya decidió sobre **qué** se construye y **cómo se ve**. Se lee si
 - Asistente personal con personaje propio; llama y escribe a nombre de la persona. Prueba con familia y amigos con
   el producto completo, por TestFlight. Logo «VÍA» con las formas oficiales de Telivia; ícono con la V. Idea de
   precio: US$19.99 al mes más paquetes de minutos («ejemplo» hasta que Juan lo fije).
+
+## Contabilidad completa · decisiones del 14 nov 2026
+
+- El libro registra el ITBIS de todas las ventas. El cierre y el cuadre muestran las ventas sin
+  comprobante excluidas del IT-1, con su monto e ITBIS. Libro e IT-1 se comparan sobre ventas con
+  NCF/e-NCF; la diferencia total debe coincidir exactamente con el aviso.
+- Ventas importadas del historial sin salida de kardex: usar el costo guardado en cada línea de
+  factura, rotulado «costo importado». Ventas con kardex: conservar el costo del kardex.
