@@ -16,6 +16,18 @@ Cuando Juan pide una función nueva, **no se programa nada** hasta que él aprue
 Orden: propuesta → Juan aprueba → lista de arreglos → Juan confirma → plan escrito → Juan aprueba →
 Workflow. Programar sin buscar antes fuera rompe esta regla y cuesta dinero y créditos.
 
+## 0c. Antes de escribir código o lanzar agentes (orden de Juan, 14 nov 2026)
+1. **Revisar lo que ya existe** en los repos (catálogos, funciones, conexiones, código probado) y decir qué
+   se reusa y qué es de verdad nuevo.
+2. **Armar el plan y criticarlo uno mismo** buscando sobreingeniería (capas o piezas que dupliquen algo,
+   agentes de más, cosas «por si acaso»); cortar y repetir hasta no poder simplificar sin perder calidad.
+   Solo se muestra la versión final.
+3. **Presentar:** qué entendí y qué verá Juan; qué se reusa y qué se crea; qué se cortó y por qué; qué
+   queda fuera; número de agentes y por qué (cada uno debe ahorrar más de lo que cuesta unir su trabajo);
+   riesgos; cómo se prueba; costo en dólares y tiempo; dudas que cambian el resultado (o «ninguna»).
+Esperar su aprobación. Si después pregunta «¿cómo lo mejoras?» y aparece algo importante, el paso 2 no se
+hizo bien. Si hay una forma más simple, decirlo. Al terminar: qué se hizo, qué se probó y qué falta.
+
 ## 1. Cómo hablarle a Juan
 
 - Todo lo que Juan lee va en **español sencillo**: mensajes, resúmenes y textos de tareas. Código y
