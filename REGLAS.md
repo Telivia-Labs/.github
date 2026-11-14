@@ -135,6 +135,14 @@ Si hay una forma más simple, se dice aunque no se haya pedido.
 - **Índice del código (codegraph):** `~/trabajo/indice/{telivia-app,lumens-web}` siguen `pruebas`; después de
   integrar a `pruebas` se corre `indice-codigo`. Leer código empieza por `codegraph_explore` con ese `projectPath`.
 
+## 5b. Estándares de código (construcción y programación)
+- **Límites del código nuevo o tocado: 100 caracteres por línea, 300 líneas por archivo y 50 líneas por función.**
+  El código heredado que no se toca no se reescribe por esto; el que se toca, se deja dentro del límite.
+- La compuerta de telivia-app ya lo exige (`herramientas/compuerta/limites.mjs`). La de lumens-web todavía revisa
+  600 líneas y 200 caracteres y no mide funciones: por igualar (tarea pendiente).
+- Un propósito por commit, en inglés con Conventional Commits y la firma de la copia; primero la prueba que falla y
+  después el arreglo; nada de claves; librerías y código abierto antes que código propio; lo mínimo nuevo.
+
 ## 6. Claude y Codex juntos (orden de Juan, 14 nov 2026)
 - **Cerebro (Claude)** coordina con Juan, decide con él, revisa, integra y prueba en la nube.
   **Dexter (Codex)** programa cuando Juan lo elige, para usar su plan de ChatGPT en vez de créditos.
@@ -174,7 +182,6 @@ Si hay una forma más simple, se dice aunque no se haya pedido.
 - Cada tarea: título en inglés con Conventional Commits, una sola cosa y sin «y»; qué hacer, archivos,
   criterios comprobables con una prueba, dependencias y tamaño. Formularios en este repo.
 - En el rediseño de Lumens no se crean tarjetas nuevas: se trabaja en sesión (§5).
-- Límites del código nuevo o tocado: 100 caracteres por línea, 300 por archivo y 50 por función.
 
 ## 10. Al terminar
 - Informe en español sencillo, corto, que se pueda leer en el celular:

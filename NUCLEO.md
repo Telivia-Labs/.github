@@ -23,6 +23,11 @@ tocar ese tema.** Fuente completa: `/srv/telivia-github/REGLAS.md` y `DECISIONES
   `projectPath` `/home/atlas/trabajo/indice/telivia-app` o `/home/atlas/trabajo/indice/lumens-web`. Quien integra a
   `pruebas` corre `indice-codigo` para ponerlo al día.
 
+## Estándares de código (siempre)
+- Código nuevo o tocado: **100 caracteres por línea, 300 líneas por archivo, 50 líneas por función**.
+- Un propósito por commit, en inglés con Conventional Commits; primero la prueba que falla, luego el arreglo.
+- telivia-app: `npm run compuerta` (ya exige 100/300/50). lumens-web: `npm run reglas` + las pruebas que toques.
+
 ## Antes de escribir código o lanzar agentes (en orden, y esperar la aprobación de Juan)
 **Paso 1 · Revisa lo que ya existe.** En los repos: catálogos, funciones, conexiones, código ya probado en otro
 proyecto. Fuera: librería, código abierto o servicio, y cómo lo hacen los grandes. Di qué reusas y qué es nuevo.
