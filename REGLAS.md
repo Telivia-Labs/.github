@@ -336,6 +336,7 @@ hizo bien. Si hay una forma más simple, decirlo. Al terminar: qué se hizo, qu�
   usuarios al mes; se conserva al sacar Odoo.
 - **Súper-admin y web sin prototipo nuevo** (orden de Juan, 14 nov 2026): el diseño (manual v1.2 grafito)
   y las funciones (ejemplo de The Board) ya están claros; se construye directo y se revisa en pruebas.
+  La web va al más alto nivel del estándar: efectos de EFECTOS.md y montajes del producto en Mac y iPhone.
 - Nada que gaste uso sin trabajo real: sin relojes, vigilantes ni reintentos periódicos. El modo
   automático lo despierta GitHub por eventos.
 - No instalar revisores ni procesos que consuman créditos sin que Juan lo pida.
