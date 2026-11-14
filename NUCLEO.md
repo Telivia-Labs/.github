@@ -28,6 +28,12 @@ tocar ese tema.** Fuente completa: `/srv/telivia-github/REGLAS.md` y `DECISIONES
 - Un propósito por commit, en inglés con Conventional Commits; primero la prueba que falla, luego el arreglo.
 - telivia-app: `npm run compuerta` (ya exige 100/300/50). lumens-web: `npm run reglas` + las pruebas que toques.
 
+## Modelos (orden de Juan, 14 nov 2026; «para que nunca se olvide»)
+- **Claude:** todo agente que escribe o arregla código va en **Opus** (`model: "opus"`); los de solo lectura
+  (revisar, medir) pueden ir en Sonnet. Juan conversa con Cerebro en el modelo que elija.
+- **Codex:** programa con **`gpt-6-astra`** y razonamiento **`high`** (en `~/.codex/config.toml`). Nunca «none».
+  Al lanzar `codex exec`, no bajar el modelo ni el razonamiento sin que Juan lo diga.
+
 ## Antes de escribir código o lanzar agentes (en orden, y esperar la aprobación de Juan)
 **Paso 1 · Revisa lo que ya existe.** En los repos: catálogos, funciones, conexiones, código ya probado en otro
 proyecto. Fuera: librería, código abierto o servicio, y cómo lo hacen los grandes. Di qué reusas y qué es nuevo.

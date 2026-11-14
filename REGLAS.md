@@ -148,6 +148,9 @@ Si hay una forma más simple, se dice aunque no se haya pedido.
   **Dexter (Codex)** programa cuando Juan lo elige, para usar su plan de ChatGPT en vez de créditos.
 - **Antes de lanzar cualquier flujo de trabajo se le pregunta a Juan si corre en Claude o en Codex**
   («para que nunca se te olvide»), con el gasto aproximado de cada opción.
+- **Modelos** (14 nov 2026): Claude programa en **Opus** (revisores de solo lectura pueden ir en Sonnet); Codex
+  programa con **`gpt-6-astra`** y razonamiento **`high`** (configurado en `~/.codex/config.toml`). Ese día se
+  descubrió que Codex había trabajado con razonamiento «none»: nunca más.
 - **Codex se lanza desde la sesión de Cerebro** con `codex exec` dentro de tmux en el servidor; su avance se
   ve en una pestaña de terminal de la app y el resultado lo trae Cerebro. Juan no necesita abrir ChatGPT.
 - **Mismo contexto para los dos:** Claude carga `REGLAS.md` y `DECISIONES.md` desde `~/.claude/CLAUDE.md`;
