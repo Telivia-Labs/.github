@@ -16,6 +16,10 @@ tocar ese tema.** Fuente completa: `/srv/telivia-github/REGLAS.md` y `DECISIONES
   diseño nuevo, borrar, pagar, privacidad, precios, legal, subir a la principal, ¿Claude o Codex?
 
 ## Método: lo más simple, con librerías, sin programar de más
+- **Herramienta antes que agente y antes que código** (corrección de Juan, 14 nov 2026): si una herramienta estándar
+  ya lo hace (formateador Prettier, revisor ESLint, generador, CLI oficial), se usa con un comando. Un agente solo
+  hace lo que la herramienta no puede (por ejemplo, partir una función larga). Nunca copiar ni escribir un programa
+  propio para algo que una herramienta estándar ya resuelve.
 - **Librerías y código abierto primero.** Antes de escribir algo: ¿lo hace ya una librería, un proyecto de
   GitHub o un servicio? ¿Lo hace ya nuestro código? Construir desde cero es lo último.
 - Una pieza genérica en vez de una por caso. Nada «por si acaso». El mínimo código nuevo que logre la calidad.
@@ -35,7 +39,7 @@ tocar ese tema.** Fuente completa: `/srv/telivia-github/REGLAS.md` y `DECISIONES
   Al lanzar `codex exec`, no bajar el modelo ni el razonamiento sin que Juan lo diga.
 
 ## Antes de escribir código o lanzar agentes (en orden, y esperar la aprobación de Juan)
-**Paso 1 · Revisa lo que ya existe.** En los repos: catálogos, funciones, conexiones, código ya probado en otro
+**Paso 1 · Revisa lo que ya existe.** Primera pregunta: **¿qué herramienta estándar lo hace sola?** En los repos: catálogos, funciones, conexiones, código ya probado en otro
 proyecto. Fuera: librería, código abierto o servicio, y cómo lo hacen los grandes. Di qué reusas y qué es nuevo.
 
 **Paso 2 · Arma el plan y critícalo tú mismo.** Revísalo como si fuera de otro y **contra el código**: capas,
