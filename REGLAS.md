@@ -132,6 +132,8 @@ Si hay una forma más simple, se dice aunque no se haya pedido.
   1440 y grande) y celular en toda pantalla tocada; grandes cuando Juan lo pida.
 - Al terminar cada fase se revisa contra el plan y se le dice a Juan qué quedó, qué no y qué falta.
 - Guía práctica de herramientas: `~/trabajo/tanda1/redisenio/GUIA-AGENTES.md` §13 y §15.
+- **Índice del código (codegraph):** `~/trabajo/indice/{telivia-app,lumens-web}` siguen `pruebas`; después de
+  integrar a `pruebas` se corre `indice-codigo`. Leer código empieza por `codegraph_explore` con ese `projectPath`.
 
 ## 6. Claude y Codex juntos (orden de Juan, 14 nov 2026)
 - **Cerebro (Claude)** coordina con Juan, decide con él, revisa, integra y prueba en la nube.

@@ -19,7 +19,9 @@ tocar ese tema.** Fuente completa: `/srv/telivia-github/REGLAS.md` y `DECISIONES
 - **Librerías y código abierto primero.** Antes de escribir algo: ¿lo hace ya una librería, un proyecto de
   GitHub o un servicio? ¿Lo hace ya nuestro código? Construir desde cero es lo último.
 - Una pieza genérica en vez de una por caso. Nada «por si acaso». El mínimo código nuevo que logre la calidad.
-- **Leer el código antes de proponer** (con `codegraph_explore` si el repo está indexado; si no, leer los archivos).
+- **Leer el código antes de proponer**, con `codegraph_explore` primero (barato): índice de `pruebas` en
+  `projectPath` `/home/atlas/trabajo/indice/telivia-app` o `/home/atlas/trabajo/indice/lumens-web`. Quien integra a
+  `pruebas` corre `indice-codigo` para ponerlo al día.
 
 ## Antes de escribir código o lanzar agentes (en orden, y esperar la aprobación de Juan)
 **Paso 1 · Revisa lo que ya existe.** En los repos: catálogos, funciones, conexiones, código ya probado en otro
