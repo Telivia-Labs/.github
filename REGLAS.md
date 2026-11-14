@@ -194,6 +194,10 @@ Workflow. Programar sin buscar antes fuera rompe esta regla y cuesta dinero y cr
 - Prohibido dentro del producto: n8n, Odoo Enterprise, TEN Framework y WhatsApp no oficial.
 - Herramientas internas que no se reparten pueden ser GPL o AGPL.
 - Telivia no emite e-CF: le manda los datos a MSeller por API.
+- **Una factura con e-NCF no se anula** (orden de Juan, 13 nov 2026: la DGII no lo permite). Un e-CF
+  aceptado se corrige con nota de crédito (E34); un e-NCF que nunca se envió se anula en la DGII por
+  MSeller (anulación de secuencias). **Toda nota de crédito o débito recibe su propio e-NCF** (E34 o E33)
+  y se manda a MSeller como cualquier e-CF.
 - Los precios de los planes de Telivia y de LIVIA van en dólares (US$) (orden de Juan, 11 nov 2026);
   los montos siguen como «ejemplo» hasta que Juan los fije.
 - Producción de Lumens no se toca sin orden de Juan. Las pruebas usan datos de ejemplo y ambientes
