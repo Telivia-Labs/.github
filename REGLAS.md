@@ -326,6 +326,10 @@ hizo bien. Si hay una forma más simple, decirlo. Al terminar: qué se hizo, qu�
   - Orden: (1) limpiar y organizar el servidor y los repos bajo nuestros estándares; (2) probar Lumens con
     el diseño nuevo de 30 a 60 días y pulirlo; (3) convertirlo en SaaS; (4) lanzar a vender solo cuando
     esté al más alto nivel. Borrar algo de la limpieza se le pregunta a Juan antes.
+- **Un solo lugar para los documentos** (orden de Juan, 14 nov 2026): el repo manda. Los documentos del
+  rediseño viven en `docs/redisenio/` de telivia-app; las copias del servidor solo apuntan al repo.
+- **Odoo sale del código** (orden de Juan, 14 nov 2026): se quita de telivia-app, guardado antes en la
+  etiqueta `archivo/odoo`; entrada, permisos y sesión pasan a `src/lib/acceso`.
 - **El modo conversacional a pantalla completa se llama «Copilot»**, igual en español e inglés (orden de
   Juan, 13 nov 2026; antes «Despacho»). Riesgo anotado: choque con Microsoft/GitHub Copilot, marca por
   confirmar. Es proyecto aparte: primero prototipo completo para que Juan lo apruebe.
