@@ -90,9 +90,10 @@ Lo que Juan ya decidió sobre **qué** se construye y **cómo se ve**. Se lee si
 ## 6. LIVIA
 - **Todo lo que necesita aprobación sale como tarjeta en el hilo, siempre** (orden de Juan, 14 nov 2026; regla
   general, no por herramienta): en el chat y en la voz, por una sola vía común para todas las herramientas
-  (cotizar, pedir, facturar, cobrar, contactar, anuncios y las que vengan). Por voz, LIVIA aprueba **solo** una tarjeta que
-  la persona está viendo en el hilo, cuando la persona se lo pide; LIVIA confirma cuál es («¿apruebo la cotización a…?»),
-  la aprueba y dice el resultado. Nunca ofrece aprobar por su cuenta ni aprueba algo que no esté en pantalla. Una prueba recorre todas las herramientas que dejan algo por
+  (cotizar, pedir, facturar, cobrar, contactar, anuncios y las que vengan). Por voz (aclarado por Juan, 14 nov): si la
+  persona le dice a LIVIA «aprobado» sobre una tarjeta que está viendo en el hilo, LIVIA la ejecuta y dice el resultado;
+  si hay varias abiertas y no queda claro cuál, pregunta cuál. Nunca ofrece aprobar por su cuenta ni aprueba algo que no
+  esté en pantalla. Si esto se complica, primero va solo la aprobación tocando la tarjeta y la voz se hace después. Una prueba recorre todas las herramientas que dejan algo por
   aprobar y falla si alguna no devuelve su tarjeta.
 - **Nivel de Claude:** pantallas, texto de LIVIA y transiciones suaves, con buen rendimiento; nada que parezca
   aplicación barata.
@@ -146,3 +147,32 @@ Lo que Juan ya decidió sobre **qué** se construye y **cómo se ve**. Se lee si
   NCF/e-NCF; la diferencia total debe coincidir exactamente con el aviso.
 - Ventas importadas del historial sin salida de kardex: usar el costo guardado en cada línea de
   factura, rotulado «costo importado». Ventas con kardex: conservar el costo del kardex.
+
+## Web pública: ampliación del encargo de Juan · 14 nov 2026
+- Juan pide investigación profunda con las mejores herramientas disponibles y referencias de grandes
+  compañías. Quiere una web de máximo nivel, con efectos y transiciones de librería y montajes del inicio,
+  chat y voz de LIVIA dentro de una MacBook. Mantener Grafito y licencias del brief: nada AGPL.
+- Explorar demo interactiva guiada para crear un cliente, preparar una factura y probar ventas con voz.
+  Posicionamiento deseado: sistema de inteligencia artificial para administrar o hacer crecer el negocio.
+  Esto define el encargo; no aprueba todavía diseño concreto, precios, gastos, llamadas ni publicación.
+
+## Web pública: fase 1 aún no aprobada · 14 nov 2026
+- Fuente escrita de Juan: `/srv/lumens/RESPUESTA-CODEX-WEB-FASE1.md`, leída completa por Dexter.
+  La fase 1 se amplía antes de pasar a planes, precios y 2–3 diseños de fase 2.
+- Mensajes a estudiar: «The AI system to manage your business» / «El sistema de inteligencia artificial
+  para administrar tu negocio», más variantes de crecimiento; recomendar una con ★.
+- No afirmar exclusividad de IA frente a Alegra, QuickBooks y Xero; demostrar tareas dominicanas.
+- La demo debe incluir Inicio/chat/orbe en MacBook, guía para cliente/factura/cuentas por cobrar/venta,
+  datos ficticios, propuesta explícita de cuotas de voz y protección de gasto. Todo gasto nuevo se consulta.
+- Investigar referencias IA y plataformas de demo del archivo, efectos de librería y licencia concreta,
+  incluida GSAP; no AGPL. Investigar scroll para esta web actualiza el alcance del pedido, sin cambiar
+  los efectos del panel ni aprobar todavía diseño o construcción.
+
+## Web de Telivia: diseño directo y revisión continua · 14 nov 2026
+- Juan aprobó el rumbo de la investigación y la entrada con demo grande en MacBook, Inicio/chat/orbe y
+  navegación por pantallas principales. Se usa el diseño real de la plataforma con datos de demostración.
+- El botón visible se llama **«Skip»**, también en español. No «Saltar presentación».
+- Copy profesional, de negocios, IA e imagen internacional; sitio completo ES/EN y modo día/noche.
+- Orden nueva: **hacer el diseño directamente, no otro prototipo**. Juan quiere ver cómo queda durante
+  el trabajo en un entorno de prueba con enlace estable. Esta orden sustituye el paso de prototipo previo
+  del brief para el diseño autorizado. No aprueba precios, publicación de telivia.ai, datos reales ni gastos nuevos.
