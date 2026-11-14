@@ -330,12 +330,12 @@ hizo bien. Si hay una forma más simple, decirlo. Al terminar: qué se hizo, qu�
   rediseño viven en `docs/redisenio/` de telivia-app; las copias del servidor solo apuntan al repo.
 - **Odoo sale del código** (orden de Juan, 14 nov 2026): se quita de telivia-app, guardado antes en la
   etiqueta `archivo/odoo`; entrada, permisos y sesión pasan a `src/lib/acceso`.
-- **El modo conversacional a pantalla completa se llama «Copilot»**, igual en español e inglés (orden de
-  Juan, 13 nov 2026; antes «Despacho»). Riesgo anotado: choque con Microsoft/GitHub Copilot, marca por
-  confirmar. Es proyecto aparte: primero prototipo completo para que Juan lo apruebe.
-
-## 7. Gasto
-
+- **Copilot se descarta** (orden de Juan, 14 nov 2026): es lo mismo que la voz, que ya funciona bien.
+  Se borró su prototipo; el modo de voz a pantalla completa sin usar (v2-voice) sale del código.
+- **Entrada del SaaS con WorkOS** (orden de Juan, 14 nov 2026): ya está hecha, gratis hasta un millón de
+  usuarios al mes; se conserva al sacar Odoo.
+- **Súper-admin y web sin prototipo nuevo** (orden de Juan, 14 nov 2026): el diseño (manual v1.2 grafito)
+  y las funciones (ejemplo de The Board) ya están claros; se construye directo y se revisa en pruebas.
 - Nada que gaste uso sin trabajo real: sin relojes, vigilantes ni reintentos periódicos. El modo
   automático lo despierta GitHub por eventos.
 - No instalar revisores ni procesos que consuman créditos sin que Juan lo pida.
