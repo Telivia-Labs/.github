@@ -347,6 +347,10 @@ hizo bien. Si hay una forma más simple, decirlo. Al terminar: qué se hizo, qu�
 - Cuando hay **más de una cosa que hacer**, primero se escribe un **plan** (fases, qué depende de qué, qué
   corre en paralelo, quién decide qué) y se le muestra a Juan; después se corre con un **flujo de trabajo
   (Workflow)**, no con agentes sueltos. Se avisa antes del tamaño y del gasto aproximado.
+- **Antes de lanzar cualquier flujo de trabajo, se le pregunta a Juan si corre en Claude o en Codex**
+  (orden de Juan, 14 nov 2026, «para que nunca se te olvide»). Codex usa el plan de ChatGPT de Juan
+  (`codex exec` en tmux en el servidor, con su avance visible en una pestaña de terminal); Claude gasta su
+  uso o créditos. La pregunta va junto con el plan y el gasto aproximado de cada opción.
 - Un agente suelto solo vale para una consulta o una pieza chica y aislada.
 - Lo que depende de algo (integrar, probar en la nube) va en secuencia dentro del plan; lo independiente va
   en paralelo, con tope de compilaciones a la vez para no saturar el servidor (cada compilación de Next
