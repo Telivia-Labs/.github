@@ -32,11 +32,14 @@ tocar ese tema.** Fuente completa: `/srv/telivia-github/REGLAS.md` y `DECISIONES
 - Un propósito por commit, en inglés con Conventional Commits; primero la prueba que falla, luego el arreglo.
 - telivia-app: `npm run compuerta` (ya exige 100/300/50). lumens-web: `npm run reglas` + las pruebas que toques.
 
-## Modelos (orden de Juan, 14 nov 2026; «para que nunca se olvide»)
-- **Claude:** todo agente que escribe o arregla código va en **Opus** (`model: "opus"`); los de solo lectura
-  (revisar, medir) pueden ir en Sonnet. Juan conversa con Cerebro en el modelo que elija.
-- **Codex:** programa con **`gpt-6-astra`** y razonamiento **`high`** (en `~/.codex/config.toml`). Nunca «none».
-  Al lanzar `codex exec`, no bajar el modelo ni el razonamiento sin que Juan lo diga.
+## Quién programa y con qué modelo (órdenes de Juan, 14 nov 2026; «para que nunca se olvide»)
+- **Toda la programación la hace Codex.** Cerebro (Claude) coordina: entiende, planea, le da las órdenes a Codex,
+  revisa lo que entrega y le reporta a Juan. Cerebro no programa ni lanza agentes de Claude para programar.
+- **Codex:** escribe con **`gpt-6.1-sol`** (razonamiento `high`) y revisa con **`gpt-6-astra`** (`-m gpt-6-astra`).
+- **Claude, solo si Juan lo pide expresamente:** escribe en **Opus** y revisa en **Fable**. Nunca Sonnet ni Haiku para
+  revisar: el que revisa no puede ser menos inteligente que el que escribe.
+- **Cuidar los créditos:** el cupo de Claude se agota y lo extra se cobra. La coordinación debe ser corta; una
+  conversación larga en Opus cuesta mucho por mensaje (se recomienda Fable para coordinar, que tiene cupo propio).
 
 ## Antes de escribir código o lanzar agentes (en orden, y esperar la aprobación de Juan)
 **Paso 1 · Revisa lo que ya existe.** Primera pregunta: **¿qué herramienta estándar lo hace sola?** En los repos: catálogos, funciones, conexiones, código ya probado en otro

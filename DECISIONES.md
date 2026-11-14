@@ -90,9 +90,12 @@ Lo que Juan ya decidió sobre **qué** se construye y **cómo se ve**. Se lee si
 ## 6. LIVIA
 - **Todo lo que necesita aprobación sale como tarjeta en el hilo, siempre** (orden de Juan, 14 nov 2026; regla
   general, no por herramienta): en el chat y en la voz, por una sola vía común para todas las herramientas
-  (cotizar, pedir, facturar, cobrar, contactar, anuncios y las que vengan). LIVIA **nunca** aprueba ni ofrece
-  aprobar por voz: se aprueba tocando la tarjeta. Una prueba recorre todas las herramientas que dejan algo por
+  (cotizar, pedir, facturar, cobrar, contactar, anuncios y las que vengan). Por voz, LIVIA aprueba **solo** una tarjeta que
+  la persona está viendo en el hilo, cuando la persona se lo pide; LIVIA confirma cuál es («¿apruebo la cotización a…?»),
+  la aprueba y dice el resultado. Nunca ofrece aprobar por su cuenta ni aprueba algo que no esté en pantalla. Una prueba recorre todas las herramientas que dejan algo por
   aprobar y falla si alguna no devuelve su tarjeta.
+- **Nivel de Claude:** pantallas, texto de LIVIA y transiciones suaves, con buen rendimiento; nada que parezca
+  aplicación barata.
 - **El hilo muestra cómo se desenvuelve el trabajo, igual que Claude:** pasos de herramientas en vivo (plegables),
   estados vivos, tarjetas en su orden; mismo flujo, rendimiento y look and feel que Claude. Con librerías
   permitidas (AI Elements, assistant-ui).
