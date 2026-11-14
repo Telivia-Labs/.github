@@ -199,7 +199,7 @@ Workflow. Programar sin buscar antes fuera rompe esta regla y cuesta dinero y cr
 - Producción de Lumens no se toca sin orden de Juan. Las pruebas usan datos de ejemplo y ambientes
   de prueba.
 - Cero claves en código, chats o registros.
-- LIVIA (orden de Juan, 12 nov 2026): la voz es Adriana en todo. Puede llamar y escribir a clientes y
+- LIVIA (orden de Juan, 12 nov 2026): la voz es Adriana en todo. Modelo de la voz: Haiku 5.5 (orden de Juan, 13 nov 2026). Puede llamar y escribir a clientes y
   prospectos reales de Lumens con la aprobación del plan de cada tarea (o «Permitir siempre»); siempre
   dice que es LIVIA, la asistente, nunca una persona; las llamadas se graban y los chats se pueden ver.
   Planes, resultados y grabaciones se guardan en la base de Lumens con acceso por rol; las grabaciones
@@ -331,6 +331,13 @@ Workflow. Programar sin buscar antes fuera rompe esta regla y cuesta dinero y cr
   en paralelo, con tope de compilaciones a la vez para no saturar el servidor (cada compilación de Next
   usa unos 6 GB).
 - Al terminar cada fase se revisa contra el plan y se le dice a Juan qué quedó, qué no y qué falta.
+
+- **Revisiones sin tapón** (orden de Juan, 13 nov 2026): nada de GitHub Actions. Cada agente crea su
+  copia con `nueva-copia` (dependencias compartidas), revisa con la compuerta local (`npm run compuerta`:
+  solo lo cambiado, con caché) y deja un informe que el revisor lee en vez de repetir las pruebas.
+  Compilaciones y Storybook pasan por `cola` (cupos fijos); los servidores de prueba se cierran solos.
+  Una sola ronda de arreglo; vuelve un revisor solo si hay una falla alta. El gerente (Cerebro) organiza
+  los flujos para no pisarse ni saturar el servidor.
 
 ## 8. Trabajo en sesión (orden de Juan, 10 nov 2026)
 
