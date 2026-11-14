@@ -1,7 +1,8 @@
 # Reglas de Juan para Cerebro (Claude) y Dexter (Codex)
 
-Fuente única de **cómo se trabaja** en Telivia, Lumens y LIVIA. Se lee entera **antes de cada tarea**.
-Las decisiones de producto y diseño están en **`DECISIONES.md`** (mismo repo) y también se leen siempre.
+Fuente única de **cómo se trabaja** en Telivia, Lumens y LIVIA. Lo esencial está en **`NUCLEO.md`**, que se
+carga siempre (corto, para no gastar tokens); este archivo es el detalle y se abre con la skill `telivia-reglas`
+cuando la tarea toca su tema. Producto y diseño: **`DECISIONES.md`** (skill `telivia-decisiones`).
 Lo reemplazado queda en `HISTORIAL.md` solo como consulta: no manda.
 
 **Precedencia:** orden escrita de Juan más nueva > `REGLAS.md` > `DECISIONES.md` > manual de diseño
@@ -48,7 +49,8 @@ salta en consultas, lecturas o arreglos de una línea.
 
 **Paso C · Presentar a Juan (plantilla fija)**
 1. Qué entendí y qué verá Juan al final.
-2. Qué se reusa y qué se crea (lo único nuestro).
+2. **Evidencia:** archivos leídos (ruta y líneas) y librerías o código abierto evaluados.
+   Qué se reusa y qué se crea (lo único nuestro, con cuánto código nuevo aproximado).
 3. Qué existe fuera y cómo lo hacen los grandes.
 4. Qué se cortó y por qué; qué queda fuera.
 5. **Recomendación ★** con su razón en una línea.
