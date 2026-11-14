@@ -31,6 +31,7 @@ Lo que Juan ya decidió sobre **qué** se construye y **cómo se ve**. Se lee si
 - **Manual vivo único** (13 nov 2026), modelo de todos los proyectos (Telivia, súper-admin, web, Vía):
   `docs/diseno/DESIGN.md` (v1.2), tokens en `src/styles/v2/`, piezas en `src/components/v2/`. Toda pieza nueva
   se agrega primero ahí; no se inventan piezas sueltas por pantalla.
+- **Nombre oficial de la línea gráfica: «Grafito»** (14 nov 2026), para todos los proyectos.
 - **Línea grafito** (13 nov 2026): un solo color de marca, grafito, de día y de noche; la noche con capas
   («Grafito medio», #141417), ni plana ni negra pura. Sin barra superior y **sin personaje**.
 - **Decisiones confirmadas** (13 nov 2026, fuente `docs/redisenio/DECISIONES.md`): esquinas suaves (8/12/16 px);
